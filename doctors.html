@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codry - Our Doctors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/doctors.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-user-md"></i> Our Team</div>
+                <h1>Meet Our <br><span class="highlight">Specialists</span></h1>
+                <p class="hero-description">Our team of experienced doctors is dedicated to providing you with the
+                    highest quality care in a compassionate environment.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Specialists</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">45+</div>
+                        <div class="stat-label">Years Combined</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-card animate-slide-right">
+                <img src="img/doctor.png"
+                    alt="Our Doctors" />
+                <div class="floating-badge badge-1"><i class="fas fa-star"></i> 4.9 ★</div>
+                <div class="floating-badge badge-2"><i class="fas fa-clock"></i> 12 min avg</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. STATS ===== -->
+    <section class="container animate-fade-up">
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <i class="fas fa-user-md"></i>
+                    <div class="number">12+</div>
+                    <div class="label">Specialists</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-certificate"></i>
+                    <div class="number">45+</div>
+                    <div class="label">Years Combined Experience</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-star"></i>
+                    <div class="number">4.8</div>
+                    <div class="label">Average Rating</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-heart"></i>
+                    <div class="number">12k+</div>
+                    <div class="label">Patients Treated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3. FILTER ===== -->
+    <section class="filter-section animate-fade-up">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Doctors</button>
+                <button class="filter-btn" data-filter="internal">Internal Medicine</button>
+                <button class="filter-btn" data-filter="pediatrics">Pediatrics</button>
+                <button class="filter-btn" data-filter="orthopedics">Orthopedics</button>
+                <button class="filter-btn" data-filter="gynecology">Gynecology</button>
+                <button class="filter-btn" data-filter="dermatology">Dermatology</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. DOCTORS ===== -->
+    <section class="doctors-section" id="doctors">
+        <div class="container">
+            <div class="doctors-grid">
+                <!-- Doctor 1 -->
+                <div class="doctor-card animate-zoom delay-1" data-category="internal">
+                    <img src="img/teacher/teacher1.png" class="card-image" alt="Dr. Ahmed" />
+                    <span class="card-badge available"><i class="fas fa-circle"></i> Available</span>
+                    <div class="card-content">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <h3>Dr. Ahmed Al-Hassan</h3>
+                        <p class="specialty">Internal Medicine Specialist</p>
+                        <div class="expertise"><span>Cardiology</span><span>Diabetes</span><span>Hypertension</span>
+                        </div>
+                        <div class="testimonial-mini"><i class="fas fa-quote-left"></i> Dr. Ahmed took time to explain
+                            everything. I felt truly cared for.</div>
+                        <div class="card-footer">
+                            <div class="experience"><i class="fas fa-briefcase"></i> 18 years</div>
+                            <a href="#" class="btn-doctor">Book <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="doctor-card animate-zoom delay-2" data-category="pediatrics">
+                    <img src="img/teacher/teacher6.png" class="card-image" alt="Dr. Layla" />
+                    <span class="card-badge available"><i class="fas fa-circle"></i> Available</span>
+                    <div class="card-content">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <h3>Dr. Layla Mansour</h3>
+                        <p class="specialty">Pediatric Consultant</p>
+                        <div class="expertise"><span>Vaccinations</span><span>Growth</span><span>Asthma</span></div>
+                        <div class="testimonial-mini"><i class="fas fa-quote-left"></i> She is amazing with kids. My son
+                            loves visiting her!</div>
+                        <div class="card-footer">
+                            <div class="experience"><i class="fas fa-briefcase"></i> 12 years</div>
+                            <a href="#" class="btn-doctor">Book <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 3 -->
+                <div class="doctor-card animate-zoom delay-3" data-category="orthopedics">
+                    <img src="img/teacher/teacher2.png" class="card-image" alt="Dr. Khalid" />
+                    <span class="card-badge busy"><i class="fas fa-circle"></i> Busy</span>
+                    <div class="card-content">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <h3>Dr. Khalid Noor</h3>
+                        <p class="specialty">Orthopedic Surgeon</p>
+                        <div class="expertise"><span>Sports
+                                Injuries</span><span>Fractures</span><span>Rehabilitation</span>
+                        </div>
+                        <div class="testimonial-mini"><i class="fas fa-quote-left"></i> Recovered from my knee injury
+                            faster
+                            than expected!</div>
+                        <div class="card-footer">
+                            <div class="experience"><i class="fas fa-briefcase"></i> 15 years</div>
+                            <a href="#" class="btn-doctor">Book <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 4 -->
+                <div class="doctor-card animate-zoom delay-4" data-category="gynecology">
+                    <img src="img/teacher/teacher3.png" class="card-image" alt="Dr. Samira" />
+                    <span class="card-badge available"><i class="fas fa-circle"></i> Available</span>
+                    <div class="card-content">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <h3>Dr. Sami Ibrahim</h3>
+                        <p class="specialty">Gynecology & Obstetrics</p>
+                        <div class="expertise"><span>Prenatal</span><span>Fertility</span><span>Menopause</span></div>
+                        <div class="testimonial-mini"><i class="fas fa-quote-left"></i> Dr. Sami made my pregnancy
+                            journey
+                            so smooth.</div>
+                        <div class="card-footer">
+                            <div class="experience"><i class="fas fa-briefcase"></i> 10 years</div>
+                            <a href="#" class="btn-doctor">Book <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 5 -->
+                <div class="doctor-card animate-zoom delay-5" data-category="dermatology">
+                    <img src="img/teacher/teacher4.png" class="card-image" alt="Dr. Omar" />
+                    <span class="card-badge away"><i class="fas fa-circle"></i> Away</span>
+                    <div class="card-content">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <h3>Dr. Omar Khaled</h3>
+                        <p class="specialty">Dermatology Specialist</p>
+                        <div class="expertise"><span>Acne</span><span>Laser</span><span>Cosmetic</span></div>
+                        <div class="testimonial-mini"><i class="fas fa-quote-left"></i> My skin has never looked better.
+                            Highly recommend!</div>
+                        <div class="card-footer">
+                            <div class="experience"><i class="fas fa-briefcase"></i> 8 years</div>
+                            <a href="#" class="btn-doctor">Book <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 6 -->
+                <div class="doctor-card animate-zoom delay-6" data-category="internal">
+                    <img src="img/teacher/teacher5.png" class="card-image" alt="Dr. Nora" />
+                    <span class="card-badge available"><i class="fas fa-circle"></i> Available</span>
+                    <div class="card-content">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <h3>Dr. Nora Al-Saud</h3>
+                        <p class="specialty">Clinical Psychologist</p>
+                        <div class="expertise"><span>Anxiety</span><span>Depression</span><span>Trauma</span></div>
+                        <div class="testimonial-mini"><i class="fas fa-quote-left"></i> She helped me through my darkest
+                            times. Forever grateful.</div>
+                        <div class="card-footer">
+                            <div class="experience"><i class="fas fa-briefcase"></i> 14 years</div>
+                            <a href="#" class="btn-doctor">Book <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. SCHEDULE - CARDS DESIGN ===== -->
+    <section class="schedule-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Working Hours</div>
+                <h2>Doctor's <span>Schedule</span></h2>
+                <p>Find the best time to visit your preferred specialist.</p>
+            </div>
+            <div class="schedule-cards">
+
+                <!-- Doctor 1 -->
+                <div class="schedule-card">
+                    <div class="schedule-doctor">
+                        <img src="img/teacher/teacher1.png" alt="Dr. Ahmed">
+                        <div>
+                            <h4>Dr. Ahmed Al-Hassan</h4>
+                            <p>Internal Medicine</p>
+                        </div>
+                    </div>
+                    <div class="schedule-days">
+                        <div class="day">
+                            <span class="day-name">Mon</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 8:00 - 6:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Tue</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 8:00 - 6:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Wed</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 8:00 - 6:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Thu</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 8:00 - 6:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Fri</span>
+                            <span class="day-status closed"><i class="fas fa-times-circle"></i> Closed</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Sat</span>
+                            <span class="day-status limited"><i class="fas fa-clock"></i> 9:00 - 2:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="schedule-card">
+                    <div class="schedule-doctor">
+                        <img src="img/teacher/teacher6.png" alt="Dr. Layla">
+                        <div>
+                            <h4>Dr. Layla Mansour</h4>
+                            <p>Pediatrics</p>
+                        </div>
+                    </div>
+                    <div class="schedule-days">
+                        <div class="day">
+                            <span class="day-name">Mon</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 7:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Tue</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 7:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Wed</span>
+                            <span class="day-status closed"><i class="fas fa-times-circle"></i> Closed</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Thu</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 7:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Fri</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 7:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Sat</span>
+                            <span class="day-status limited"><i class="fas fa-clock"></i> 10:00 - 3:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 3 -->
+                <div class="schedule-card">
+                    <div class="schedule-doctor">
+                        <img src="img/teacher/teacher2.png" alt="Dr. Khalid">
+                        <div>
+                            <h4>Dr. Khalid Noor</h4>
+                            <p>Orthopedics</p>
+                        </div>
+                    </div>
+                    <div class="schedule-days">
+                        <div class="day">
+                            <span class="day-name">Mon</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 8:00 - 5:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Tue</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 8:00 - 5:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Wed</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 8:00 - 5:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Thu</span>
+                            <span class="day-status limited"><i class="fas fa-clock"></i> 8:00 - 12:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Fri</span>
+                            <span class="day-status closed"><i class="fas fa-times-circle"></i> Closed</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Sat</span>
+                            <span class="day-status limited"><i class="fas fa-clock"></i> 9:00 - 1:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 4 -->
+                <div class="schedule-card">
+                    <div class="schedule-doctor">
+                        <img src="img/teacher/teacher5.png" alt="Dr. Samira">
+                        <div>
+                            <h4>Dr. Samira Ibrahim</h4>
+                            <p>Gynecology</p>
+                        </div>
+                    </div>
+                    <div class="schedule-days">
+                        <div class="day">
+                            <span class="day-name">Mon</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 8:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Tue</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 8:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Wed</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 8:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Thu</span>
+                            <span class="day-status open"><i class="fas fa-check-circle"></i> 9:00 - 8:00</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Fri</span>
+                            <span class="day-status closed"><i class="fas fa-times-circle"></i> Closed</span>
+                        </div>
+                        <div class="day">
+                            <span class="day-name">Sat</span>
+                            <span class="day-status limited"><i class="fas fa-clock"></i> 10:00 - 4:00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. WHY OUR DOCTORS ===== -->
+    <section class="why-doctors animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Why Choose Us</div>
+                <h2>Why Our Doctors <span>Stand Out</span></h2>
+                <p>Our specialists are not just experts — they're compassionate caregivers who put you first.</p>
+            </div>
+            <div class="why-doctors-grid">
+                <div class="why-doctors-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Board Certified</h3>
+                    <p>All our doctors are board-certified specialists with international training and experience.</p>
+                </div>
+                <div class="why-doctors-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Compassionate Care</h3>
+                    <p>We treat every patient with empathy, respect, and genuine concern for your well-being.</p>
+                </div>
+                <div class="why-doctors-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>On-Time Service</h3>
+                    <p>Your time matters. Our doctors respect your schedule with minimal waiting times.</p>
+                </div>
+                <div class="why-doctors-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Patient-Centered</h3>
+                    <p>We listen to your concerns and involve you in every decision about your health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Find Your Doctor Today</h2>
+            <p>Browse our specialists and book your appointment with the doctor that fits your needs.</p>
+            <a href="#" class="btn-white"><i class="fas fa-calendar-check"></i> Find a Doctor</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div></div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const doctorCards = document.querySelectorAll('.doctor-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                doctorCards.forEach(card => {
+                    const category = card.dataset.category;
+
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'zoomIn 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Scroll Observer
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right, .animate-zoom')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

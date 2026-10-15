@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codry - Health Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-newspaper"></i> Our Blog</div>
+                <h1>Health <span class="highlight">Insights</span></h1>
+                <p class="hero-description">Stay informed with the latest health tips, medical news, and expert advice
+                    from our specialists.</p>
+            </div>
+            <div class="hero-image-card animate-slide-right">
+                <img src="img/blog/blog2.png"
+                    alt="Blog" />
+                <div class="floating-badge badge-1"><i class="fas fa-star"></i> 4.9 ★</div>
+                <div class="floating-badge badge-2"><i class="fas fa-clock"></i> Weekly Updates</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. BLOG ===== -->
+    <section class="blog-section animate-fade-up">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Articles</div>
+            <h2>Latest <span>Posts</span></h2>
+            <p>Read our latest articles and stay up to date with the world of health and wellness.</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Posts -->
+            <div>
+                <div class="posts-grid">
+                    <!-- Post 1 -->
+                    <div class="post-card animate-fade-up delay-1">
+                        <img src="img/blog/blog1.png"
+                            class="post-image" alt="Mental Health" />
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category"><i class="fas fa-tag"></i> Mental Health</span>
+                                <span>Jan 15, 2025</span>
+                            </div>
+                            <h3>10 Tips for Better Mental Health in 2025</h3>
+                            <p class="post-excerpt">Discover practical strategies to improve your mental well-being and
+                                reduce stress this year.</p>
+                            <div class="post-footer">
+                                <span class="author">
+                                    <img src="img/users/1.png" alt="Author" />
+                                    Dr. Nor Al-Saud
+                                </span>
+                                <span class="read-time"><i class="fas fa-eye"></i> 1.2k reads</span>
+                            </div>
+                            <a href="#" class="btn-read">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="post-card animate-fade-up delay-2">
+                        <img src="img/blog/blog2.png"
+                            class="post-image" alt="Nutrition" />
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category"><i class="fas fa-tag"></i> Nutrition</span>
+                                <span>Jan 12, 2025</span>
+                            </div>
+                            <h3>5 Superfoods You Should Add to Your Diet</h3>
+                            <p class="post-excerpt">Boost your immune system and energy levels with these
+                                nutrient-packed superfoods.</p>
+                            <div class="post-footer">
+                                <span class="author">
+                                    <img src="img/users/2.png" alt="Author" />
+                                    Dr. Ahmed Al-Hassan
+                                </span>
+                                <span class="read-time"><i class="fas fa-eye"></i> 980 reads</span>
+                            </div>
+                            <a href="#" class="btn-read">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="post-card animate-fade-up delay-3">
+                        <img src="img/blog/blog3.png"
+                            class="post-image" alt="Exercise" />
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category"><i class="fas fa-tag"></i> Fitness</span>
+                                <span>Jan 10, 2025</span>
+                            </div>
+                            <h3>Exercise for Everyone: Tips for All Ages</h3>
+                            <p class="post-excerpt">Stay active and healthy with these simple exercise tips suitable for
+                                every age group.</p>
+                            <div class="post-footer">
+                                <span class="author">
+                                    <img src="img/users/3.png" alt="Author" />
+                                    Dr. Khalid Noor
+                                </span>
+                                <span class="read-time"><i class="fas fa-eye"></i> 780 reads</span>
+                            </div>
+                            <a href="#" class="btn-read">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 4 -->
+                    <div class="post-card animate-fade-up delay-4">
+                        <img src="img/services.png"
+                            class="post-image" alt="Women's Health" />
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category"><i class="fas fa-tag"></i> Women's Health</span>
+                                <span>Jan 8, 2025</span>
+                            </div>
+                            <h3>Women's Health: What Every Woman Should Know</h3>
+                            <p class="post-excerpt">Essential health screenings and tips for women at every stage of
+                                life.</p>
+                            <div class="post-footer">
+                                <span class="author">
+                                    <img src="img/users/6.png" alt="Author" />
+                                    Dr. Samira Ibrahim
+                                </span>
+                                <span class="read-time"><i class="fas fa-eye"></i> 650 reads</span>
+                            </div>
+                            <a href="#" class="btn-read">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 5 -->
+                    <div class="post-card animate-fade-up delay-5">
+                        <img src="img/services/1.png"
+                            class="post-image" alt="Children's Health" />
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category"><i class="fas fa-tag"></i> Pediatrics</span>
+                                <span>Jan 5, 2025</span>
+                            </div>
+                            <h3>Building Healthy Habits in Children</h3>
+                            <p class="post-excerpt">Guide your children toward a lifetime of health with these simple
+                                daily habits.</p>
+                            <div class="post-footer">
+                                <span class="author">
+                                    <img src="img/users/5.png" alt="Author" />
+                                    Dr. Layl Mansour
+                                </span>
+                                <span class="read-time"><i class="fas fa-eye"></i> 540 reads</span>
+                            </div>
+                            <a href="#" class="btn-read">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 6 -->
+                    <div class="post-card animate-fade-up delay-6">
+                        <img src="img/blog/8.png"
+                            class="post-image" alt="Mental Health" />
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category"><i class="fas fa-tag"></i> Mental Health</span>
+                                <span>Jan 3, 2025</span>
+                            </div>
+                            <h3>How to Manage Anxiety in Daily Life</h3>
+                            <p class="post-excerpt">Practical tips and techniques to manage anxiety and find peace in
+                                your daily routine.</p>
+                            <div class="post-footer">
+                                <span class="author">
+                                    <img src="img/users/4.png" alt="Author" />
+                                    Dr. Nor Al-Saud
+                                </span>
+                                <span class="read-time"><i class="fas fa-eye"></i> 420 reads</span>
+                            </div>
+                            <a href="#" class="btn-read">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <span class="active">1</span>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Search -->
+                <div class="sidebar-widget animate-fade-up delay-1">
+                    <h4><i class="fas fa-search"></i> Search</h4>
+                    <div class="search-box">
+                        <input type="text" placeholder="Search articles..." />
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-widget animate-fade-up delay-2">
+                    <h4><i class="fas fa-folder"></i> Categories</h4>
+                    <ul class="category-list">
+                        <li><a href="#">Mental Health</a> <span>12</span></li>
+                        <li><a href="#">Nutrition</a> <span>8</span></li>
+                        <li><a href="#">Fitness</a> <span>6</span></li>
+                        <li><a href="#">Women's Health</a> <span>5</span></li>
+                        <li><a href="#">Pediatrics</a> <span>4</span></li>
+                        <li><a href="#">Cardiology</a> <span>3</span></li>
+                    </ul>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="sidebar-widget animate-fade-up delay-3">
+                    <h4><i class="fas fa-clock"></i> Recent Posts</h4>
+                    <div class="recent-post">
+                        <img src="img/blog/blog1.png"
+                            alt="Post" />
+                        <div class="info">
+                            <h5>10 Tips for Better Mental Health</h5>
+                            <span class="date">Jan 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="recent-post">
+                        <img src="img/blog/blog2.png"
+                            alt="Post" />
+                        <div class="info">
+                            <h5>5 Superfoods You Should Add</h5>
+                            <span class="date">Jan 12, 2025</span>
+                        </div>
+                    </div>
+                    <div class="recent-post">
+                        <img src="img/blog/blog3.png"
+                            alt="Post" />
+                        <div class="info">
+                            <h5>Exercise for Everyone</h5>
+                            <span class="date">Jan 10, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="sidebar-widget animate-fade-up delay-4">
+                    <h4><i class="fas fa-tags"></i> Tags</h4>
+                    <div class="tags">
+                        <a href="#" class="tag">Health</a>
+                        <a href="#" class="tag">Wellness</a>
+                        <a href="#" class="tag">Nutrition</a>
+                        <a href="#" class="tag">Fitness</a>
+                        <a href="#" class="tag">Mental Health</a>
+                        <a href="#" class="tag">Pediatrics</a>
+                        <a href="#" class="tag">Cardiology</a>
+                        <a href="#" class="tag">Women's Health</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="sidebar-widget animate-fade-up delay-5">
+                    <h4><i class="fas fa-envelope"></i> Newsletter</h4>
+                    <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:1rem;">Subscribe to get the
+                        latest health tips straight to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div></div>
+    </section>
+
+    <!-- ===== 3. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter and never miss a health tip or medical update.</p>
+            <a href="#" class="btn-white"><i class="fas fa-envelope"></i> Subscribe Now</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div></div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Newsletter form
+        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! Check your email for confirmation.');
+            this.reset();
+        });
+
+        // Search
+        document.querySelector('.search-box button').addEventListener('click', function () {
+            const input = document.querySelector('.search-box input');
+            if (input.value.trim()) {
+                alert('Searching for: "' + input.value + '"');
+            } else {
+                alert('Please enter a search term.');
+            }
+        });
+
+        document.querySelector('.search-box input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-box button').click();
+            }
+        });
+
+        // ===== SCROLL ANIMATION =====
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

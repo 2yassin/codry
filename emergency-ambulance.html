@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codry - Emergency & Ambulance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/emergency.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-ambulance"></i> Emergency Services</div>
+                <h1>Emergency & <br><span class="highlight">Ambulance Services</span></h1>
+                <p class="hero-description">Fast, reliable emergency care when you need it most. Our ambulance team is
+                    available 24/7 to respond to your emergency.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5min</div>
+                        <div class="stat-label">Average Response</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Emergency Service</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate-slide-right">
+                <div class="hero-image-card">
+                    <i class="fas fa-ambulance main-icon"></i>
+                    <h3>Codry Emergency</h3>
+                    <p>Fast • Reliable • Caring</p>
+                    <small class="small-text">📍 Your safety, our priority</small>
+                    <div class="floating-badge badge-1"><i class="fas fa-clock"></i> 24/7 Available</div>
+                    <div class="floating-badge badge-2"><i class="fas fa-check-circle"></i> Certified Team</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. EMERGENCY NUMBER ===== -->
+    <section class="emergency-number-section">
+        <div class="container">
+            <div class="label"><i class="fas fa-phone"></i> Call Now for Emergency</div>
+            <div class="number animate-pulse-red">
+                <a href="tel:1234567890">123-456-7890</a>
+            </div>
+            <div class="sub-text">Available 24 hours a day, 7 days a week</div>
+            <div class="emergency-badge"><i class="fas fa-shield-alt"></i> Free for medical emergencies</div>
+        </div>
+    </section>
+
+    <!-- ===== 3. AMBULANCE REQUEST ===== -->
+    <section class="ambulance-section animate-fade-up">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Request Ambulance</div>
+            <h2>Request <span>Emergency</span> Help</h2>
+            <p>Fill in the form below to request an ambulance. Our team will respond immediately.</p>
+        </div>
+
+        <div class="ambulance-grid">
+            <div class="ambulance-form animate-fade-up delay-1">
+                <h3>Ambulance Request Form</h3>
+                <p>Please provide your location and condition details.</p>
+                <form id="ambulanceForm">
+                    <div class="row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" placeholder="Enter your full name" required />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" placeholder="Enter your phone number" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> Location / Address</label>
+                        <input type="text" placeholder="Enter your location or address" required />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-info-circle"></i> Describe the Emergency</label>
+                        <textarea placeholder="Describe the situation, symptoms, or emergency type..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-user-md"></i> Patient Condition</label>
+                        <select>
+                            <option value="">Select condition</option>
+                            <option value="critical">Critical / Life-threatening</option>
+                            <option value="urgent">Urgent / Serious</option>
+                            <option value="moderate">Moderate / Stable</option>
+                            <option value="mild">Mild / Minor</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-emergency">
+                        <i class="fas fa-ambulance"></i> Request Ambulance Now
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right: Ambulance Status -->
+            <div class="payment-summary animate-fade-up delay-2">
+                <h3><i class="fas fa-truck-medical"></i> Ambulance Status</h3>
+                <div class="summary-item">
+                    <span class="label">Status</span>
+                    <span class="value" style="color:#4CAF50;"><i class="fas fa-check-circle"></i> Available</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Response Time</span>
+                    <span class="value">5-7 minutes</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Ambulance</span>
+                    <span class="value">Unit #A-12</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Paramedics</span>
+                    <span class="value">2 on board</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Equipment</span>
+                    <span class="value">Full ICU support</span>
+                </div>
+                <div class="summary-item total">
+                    <span class="label">Coverage</span>
+                    <span class="value" style="color:var(--primary);">24/7</span>
+                </div>
+            </div>
+        </div></div>
+    </section>
+
+    <!-- ===== 4. EMERGENCY INSTRUCTIONS ===== -->
+    <section class="instructions-section animate-fade-up">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">First Aid</div>
+            <h2>Emergency <span>Instructions</span></h2>
+            <p>Follow these steps while waiting for the ambulance to arrive.</p>
+        </div>
+        <div class="instructions-grid">
+            <div class="instruction-card animate-fade-up delay-1">
+                <div class="step-number">01</div>
+                <div class="icon"><i class="fas fa-phone"></i></div>
+                <h4>Call for Help</h4>
+                <p>Call the emergency number immediately. Stay calm and speak clearly.</p>
+            </div>
+            <div class="instruction-card animate-fade-up delay-2">
+                <div class="step-number">02</div>
+                <div class="icon"><i class="fas fa-map-location-dot"></i></div>
+                <h4>Share Your Location</h4>
+                <p>Provide your exact location, landmarks, and building details.</p>
+            </div>
+            <div class="instruction-card animate-fade-up delay-3">
+                <div class="step-number">03</div>
+                <div class="icon"><i class="fas fa-heart"></i></div>
+                <h4>Stay with the Patient</h4>
+                <p>Keep the patient calm and comfortable. Do not move them unless necessary.</p>
+            </div>
+            <div class="instruction-card animate-fade-up delay-4">
+                <div class="step-number">04</div>
+                <div class="icon"><i class="fas fa-hospital"></i></div>
+                <h4>Prepare for Arrival</h4>
+                <p>Clear the pathway and have identification and medical information ready.</p>
+            </div>
+        </div></div>
+    </section>
+
+    <!-- ===== 5. LOCATIONS ===== -->
+    <section class="locations-section animate-fade-up">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Locations</div>
+            <h2>Emergency <span>Locations</span></h2>
+            <p>Find the nearest emergency service location to you.</p>
+        </div>
+        <div class="locations-grid">
+            <div class="location-card animate-fade-up delay-1">
+                <div class="icon"><i class="fas fa-hospital"></i></div>
+                <h4>Main Emergency Center</h4>
+                <p>123 Main Street, City Center</p>
+                <span class="distance"><i class="fas fa-location-dot"></i> Central location</span>
+            </div>
+            <div class="location-card animate-fade-up delay-2">
+                <div class="icon"><i class="fas fa-building"></i></div>
+                <h4>North Branch</h4>
+                <p>456 North Avenue, City</p>
+                <span class="distance"><i class="fas fa-clock"></i> 24/7 Open</span>
+            </div>
+            <div class="location-card animate-fade-up delay-3">
+                <div class="icon"><i class="fas fa-ambulance"></i></div>
+                <h4>Ambulance Base</h4>
+                <p>789 Emergency Road, City</p>
+                <span class="distance"><i class="fas fa-truck-medical"></i> Quick response</span>
+            </div>
+        </div></div>
+    </section>
+
+    <!-- ===== 6. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Need Immediate <span>Help?</span></h2>
+            <p>Call our emergency line now. Our team is ready to assist you 24/7.</p>
+            <a href="#" class="btn-white"><i class="fas fa-phone"></i> Call Emergency</a>
+        </div>
+    </section>
+
+    <!-- ===== 7. FOOTER ===== -->
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Ambulance Form
+        document.getElementById('ambulanceForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('🚑 Ambulance dispatched! Our team will arrive shortly. Stay calm and stay with the patient.');
+            this.reset();
+        });
+
+        // Newsletter
+        document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            this.reset();
+        });
+
+        // ===== SCROLL ANIMATION =====
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

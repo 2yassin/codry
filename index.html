@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codry Medical Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    
+    <style>
+
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            position: relative;
+            min-height: calc(100vh -68px);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 2%;
+            overflow: hidden;
+        }
+
+        /* الخلفية مع تأثير Parallax */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=2091&auto=format&fit=crop') center/cover no-repeat;
+            z-index: 1;
+            animation: zoomIn 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        /* طبقة تعتيم فخمة */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(110deg,
+                    rgba(13, 31, 44, 0.95) 0%,
+                    rgba(13, 92, 66, 0.85) 50%,
+                    rgba(13, 31, 44, 0.75) 100%);
+            z-index: 2;
+        }
+
+        /* أشكال هندسية ذهبية في الخلفية */
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 3;
+        }
+
+        .hero-shape-1 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(245, 176, 66, 0.15);
+            top: -150px;
+            right: -100px;
+            animation: rotateSlow 30s linear infinite;
+        }
+
+        .hero-shape-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 168, 107, 0.15) 0%, transparent 70%);
+            bottom: -100px;
+            left: 10%;
+        }
+
+        @keyframes rotateSlow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ================= HERO CONTENT ================= */
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+
+        .hero-text {
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 176, 66, 0.1);
+            border: 1px solid rgba(245, 176, 66, 0.4);
+            color: var(--gold);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            text-transform: uppercase;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+        }
+
+        .hero-title {
+            /* font-family: 'Playfair Display', serif; */
+            font-size: 4.5rem;
+            line-height: 1.1;
+            color: var(--bg-white);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .hero-title .gold-text {
+            color: var(--gold);
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title .gold-text::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(245, 176, 66, 0.2);
+            z-index: -1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 550px;
+            margin-bottom: 45px;
+            font-weight: 300;
+        }
+
+        /* ================= BUTTONS ================= */
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 42px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-white);
+            box-shadow: 0 15px 35px rgba(0, 168, 107, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px rgba(0, 168, 107, 0.55);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--bg-white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-white);
+            color: var(--text-dark);
+            border-color: var(--bg-white);
+            transform: translateY(-4px);
+        }
+
+        /* ================= HERO IMAGE/CARD ================= */
+        .hero-visual {
+            position: relative;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* كارت زجاجي فخم */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--primary));
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            border-radius: 20px;
+            background: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop') center/cover;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13, 31, 44, 0.6), transparent);
+        }
+
+        .card-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 55px;
+            height: 55px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-size: 1.4rem;
+            z-index: 2;
+            box-shadow: 0 10px 25px rgba(245, 176, 66, 0.5);
+        }
+
+        .glass-card h3 {
+            /* font-family: 'Playfair Display', serif; */
+            color: var(--bg-white);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .glass-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* معلومات الاتصال السريعة */
+        .quick-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(0, 168, 107, 0.15);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 168, 107, 0.3);
+        }
+
+        .quick-info-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .quick-info-text {
+            color: white;
+        }
+
+        .quick-info-text small {
+            display: block;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .quick-info-text strong {
+            font-size: 1.1rem;
+            color: var(--gold);
+        }
+
+        /* ================= STATS BAR ================= */
+        .stats-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(13, 31, 44, 0.85);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(245, 176, 66, 0.2);
+            padding: 30px 6%;
+            z-index: 10;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .stat-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(245, 176, 66, 0.1);
+            border: 1px solid rgba(245, 176, 66, 0.3);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        .stat-text h3 {
+            /* font-family: 'Playfair Display', serif; */
+            font-size: 1.8rem;
+            color: var(--bg-white);
+            margin-bottom: 2px;
+            line-height: 1;
+        }
+
+        .stat-text p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-container {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+                padding-top: 130px;
+                padding-bottom: 200px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-description {
+                margin: 0 auto 40px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-badge {
+                display: inline-flex;
+            }
+
+            .stats-bar {
+                position: relative;
+                padding: 30px 6%;
+            }
+
+            .stats-container {
+                justify-content: center;
+            }
+
+            .stat-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+
+            .nav-btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .glass-card {
+                padding: 25px;
+            }
+
+            .stat-item {
+                flex: 1 1 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li class="dropdown" id="departmentsDropdown">
+                        <a href="#">
+                            Departments <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                            <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                            <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                            <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                            <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                            <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+        <!-- الخلفية -->
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <!-- أشكال زخرفية -->
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+
+        <!-- المحتوى -->
+        <div class="hero-container">
+
+            <!-- النص -->
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-star"></i>
+                    Excellence in Healthcare
+                </div>
+
+                <h1 class="hero-title">
+                    Your Health,<br>
+                    Our <span class="gold-text">Commitment</span>
+                </h1>
+
+                <p class="hero-description">
+                    At Codry Medical Center, we deliver world-class medical care
+                    with cutting-edge technology and a team of renowned specialists.
+                    Your well-being is our life's work.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Book Appointment
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fa-solid fa-play"></i>
+                        Watch Our Story
+                    </a>
+                </div>
+            </div>
+
+            <!-- الكارت الزجاجي -->
+            <div class="hero-visual">
+                <div class="glass-card">
+                    <div class="card-image">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                    </div>
+                    <h3>24/7 Emergency Care</h3>
+                    <p>Our emergency department is always ready to provide immediate, expert medical attention whenever
+                        you need it most.</p>
+
+                    <div class="quick-info">
+                        <div class="quick-info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="quick-info-text">
+                            <small>Emergency Hotline</small>
+                            <strong>+1 (800) CODRY-24</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- شريط الإحصائيات -->
+        <!-- <div class="stats-bar">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="stat-text">
+                        <h3>25+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="stat-text">
+                        <h3>50+</h3>
+                        <p>Expert Doctors</p>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-text">
+                        <h3>10K+</h3>
+                        <p>Happy Patients</p>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+                    <div class="stat-text">
+                        <h3>4.9</h3>
+                        <p>Patient Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+</div>
+    </section>
+
+
+    <!-- ===== 2. EMERGENCY BANNER ===== -->
+    <section class="emergency-banner">
+        <div class="icon"><i class="fas fa-ambulance"></i></div>
+        <div class="text">
+            <span>Emergency?</span> Call us immediately
+        </div>
+        <a href="tel:1234567890" class="btn-emergency">
+            <i class="fas fa-phone"></i> 123-456-7890
+        </a>
+        <a href="emergency-ambulance.html" class="btn-emergency" style="background:rgba(255,255,255,0.2); color:white;">
+            <i class="fas fa-arrow-right"></i> More Info
+        </a>
+    </section>
+
+    <!-- ===== 3. SERVICES ===== -->
+    <section class="services-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Our Services</div>
+                <h2>Comprehensive <span>Healthcare</span></h2>
+                <p>We offer a wide range of medical services to keep you and your family healthy.</p>
+            </div>
+            <div class="services-grid">
+                <a href="services.html" class="service-card animate-fade-up delay-1">
+                    <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+                    <h3>Internal Medicine</h3>
+                    <p>Expert diagnosis and treatment for chronic conditions.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="services.html" class="service-card animate-fade-up delay-2">
+                    <div class="service-icon"><i class="fas fa-baby"></i></div>
+                    <h3>Pediatrics</h3>
+                    <p>Compassionate care for children from birth to adolescence.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="services.html" class="service-card animate-fade-up delay-3">
+                    <div class="service-icon"><i class="fas fa-bone"></i></div>
+                    <h3>Orthopedics</h3>
+                    <p>Advanced treatment for bone, joint, and muscle conditions.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="services.html" class="service-card animate-fade-up delay-4">
+                    <div class="service-icon"><i class="fas fa-female"></i></div>
+                    <h3>Gynecology</h3>
+                    <p>Complete women's health services from adolescence to menopause.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="services.html" class="service-card animate-fade-up delay-5">
+                    <div class="service-icon"><i class="fas fa-tooth"></i></div>
+                    <h3>Dentistry</h3>
+                    <p>Comprehensive dental care including cosmetic procedures.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="services.html" class="service-card animate-fade-up delay-6">
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Psychology</h3>
+                    <p>Mental health support for anxiety, depression, and wellness.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="medicai-test.html" class="service-card animate-fade-up delay-7">
+                    <div class="service-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Lab Tests</h3>
+                    <p>Accurate and fast diagnostic tests for all your health needs.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="radiolagy.html" class="service-card animate-fade-up delay-8">
+                    <div class="service-icon"><i class="fas fa-x-ray"></i></div>
+                    <h3>Radiology</h3>
+                    <p>Advanced imaging services for accurate diagnosis.</p>
+                    <span class="arrow-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. WHY CHOOSE US ===== -->
+    <section class="why-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Why Codry</div>
+                <h2>Why Choose <span>Us?</span></h2>
+                <p>We combine expertise, technology, and compassion to deliver the best care possible.</p>
+            </div>
+            <div class="why-grid">
+                <a href="about.html" class="why-card animate-fade-up delay-1">
+                    <div class="why-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Expert Doctors</h3>
+                    <p>Our team includes board-certified specialists with years of experience.</p>
+                </a>
+                <a href="about.html" class="why-card animate-fade-up delay-2">
+                    <div class="why-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Advanced Tech</h3>
+                    <p>State-of-the-art diagnostic tools and modern treatment facilities.</p>
+                </a>
+                <a href="about.html" class="why-card animate-fade-up delay-3">
+                    <div class="why-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Minimal Waiting</h3>
+                    <p>Smart scheduling keeps your wait time under 15 minutes.</p>
+                </a>
+                <a href="about.html" class="why-card animate-fade-up delay-4">
+                    <div class="why-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees — you know the cost before any procedure.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. STATS ===== -->
+    <section class="stats-section animate-fade-up">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">12k+</div>
+                <div class="stat-label">Happy Patients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Specialists</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">45+</div>
+                <div class="stat-label">Years Combined Experience</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. SPECIALTIES ===== -->
+    <section class="specialties-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Specialties</div>
+                <h2>Our <span>Specialties</span></h2>
+                <p>Explore our specialized departments designed to serve all your healthcare needs.</p>
+            </div>
+            <div class="specialties-grid">
+                <a href="doctors.html" class="specialty-card animate-fade-up delay-1">
+                    <span class="specialty-icon"><i class="fas fa-user-md"></i></span>
+                    <h3>Doctors</h3>
+                    <p>Meet our team of experienced specialists.</p>
+                </a>
+                <a href="medicai-test.html" class="specialty-card animate-fade-up delay-2">
+                    <span class="specialty-icon"><i class="fas fa-flask"></i></span>
+                    <h3>Lab Tests</h3>
+                    <p>Accurate diagnostics for better health decisions.</p>
+                </a>
+                <a href="radiolagy.html" class="specialty-card animate-fade-up delay-3">
+                    <span class="specialty-icon"><i class="fas fa-x-ray"></i></span>
+                    <h3>Radiology</h3>
+                    <p>Advanced imaging for precise diagnosis.</p>
+                </a>
+                <a href="pharmacy.html" class="specialty-card animate-fade-up delay-4">
+                    <span class="specialty-icon"><i class="fas fa-prescription-bottle"></i></span>
+                    <h3>Pharmacy</h3>
+                    <p>Quality medications at your fingertips.</p>
+                </a>
+                <a href="room.html" class="specialty-card animate-fade-up delay-5">
+                    <span class="specialty-icon"><i class="fas fa-bed"></i></span>
+                    <h3>Patient Rooms</h3>
+                    <p>Comfortable stays for your recovery.</p>
+                </a>
+                <a href="emergency-ambulance.html" class="specialty-card animate-fade-up delay-6">
+                    <span class="specialty-icon"><i class="fas fa-ambulance"></i></span>
+                    <h3>Emergency</h3>
+                    <p>24/7 emergency and ambulance services.</p>
+                </a>
+                <a href="blog.html" class="specialty-card animate-fade-up delay-7">
+                    <span class="specialty-icon"><i class="fas fa-newspaper"></i></span>
+                    <h3>Health Blog</h3>
+                    <p>Stay informed with health tips and news.</p>
+                </a>
+                <a href="contact.html" class="specialty-card animate-fade-up delay-8">
+                    <span class="specialty-icon"><i class="fas fa-phone"></i></span>
+                    <h3>Contact Us</h3>
+                    <p>Get in touch with our team.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. DOCTORS ===== -->
+    <section class="doctors-home-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Our Team</div>
+                <h2>Meet Our <span>Specialists</span></h2>
+                <p>Experienced and compassionate professionals dedicated to your health.</p>
+            </div>
+            <div class="doctors-home-grid">
+                <a href="doctors.html" class="doctor-home-card animate-fade-up delay-1">
+                    <img src="img/teacher/teacher1.png" alt="Doctor" />
+                    <h3>Dr. Ahmed Al-Hassan</h3>
+                    <p class="specialty">Internal Medicine</p>
+                    <p>18 years of experience</p>
+                </a>
+                <a href="doctors.html" class="doctor-home-card animate-fade-up delay-2">
+                    <img src="img/teacher/teacher2.png" alt="Doctor" />
+                    <h3>Dr. Layla Mansour</h3>
+                    <p class="specialty">Pediatrics</p>
+                    <p>12 years of experience</p>
+                </a>
+                <a href="doctors.html" class="doctor-home-card animate-fade-up delay-3">
+                    <img src="img/teacher/teacher3.png" alt="Doctor" />
+                    <h3>Dr. Khalid Noor</h3>
+                    <p class="specialty">Orthopedics</p>
+                    <p>15 years of experience</p>
+                </a>
+                <a href="doctors.html" class="doctor-home-card animate-fade-up delay-4">
+                    <img src="img/teacher/teacher6.png" alt="Doctor" />
+                    <h3>Dr. Samira Ibrahim</h3>
+                    <p class="specialty">Gynecology</p>
+                    <p>10 years of experience</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 8. BLOG ===== -->
+    <section class="blog-home-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Our Blog</div>
+                <h2>Latest <span>Articles</span></h2>
+                <p>Stay informed with the latest health tips and medical news.</p>
+            </div>
+            <div class="blog-home-grid">
+                <a href="blog.html" class="blog-home-card animate-fade-up delay-1">
+                    <img src="img/blog/blog1.png" alt="Mental Health" />
+                    <div class="content">
+                        <span class="category">Mental Health</span>
+                        <h4>10 Tips for Better Mental Health in 2025</h4>
+                        <p>Discover practical strategies to improve your mental well-being.</p>
+                        <span class="date">Jan 15, 2025</span>
+                    </div>
+                </a>
+                <a href="blog.html" class="blog-home-card animate-fade-up delay-2">
+                    <img src="img/blog/blog2.png" alt="Nutrition" />
+                    <div class="content">
+                        <span class="category">Nutrition</span>
+                        <h4>5 Superfoods You Should Add to Your Diet</h4>
+                        <p>Boost your immune system with these nutrient-packed superfoods.</p>
+                        <span class="date">Jan 12, 2025</span>
+                    </div>
+                </a>
+                <a href="blog.html" class="blog-home-card animate-fade-up delay-3">
+                    <img src="img/blog/blog3.png" alt="Exercise" />
+                    <div class="content">
+                        <span class="category">Fitness</span>
+                        <h4>Exercise for Everyone: Tips for All Ages</h4>
+                        <p>Stay active and healthy with these simple exercise tips.</p>
+                        <span class="date">Jan 10, 2025</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 9. TESTIMONIALS ===== -->
+    <section class="testimonials-home-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Testimonials</div>
+                <h2>What Our <span>Patients Say</span></h2>
+                <p>Real stories from real people who trust us with their health.</p>
+            </div>
+            <div class="testimonials-home-grid">
+                <div class="testimonial-home-card animate-fade-up delay-1">
+                    <div class="quote"><i class="fas fa-quote-right"></i></div>
+                    <p class="text">"The team at Codry made me feel comfortable from the first visit. The doctor
+                        listened to
+                        all my concerns and explained everything clearly."</p>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="patient">
+                        <img src="img/users/1.png" alt="Patient">
+                        <div>
+                            <div class="patient-name">Fadi Al-Hassan</div>
+                            <div class="patient-title">Father of 2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-home-card animate-fade-up delay-2">
+                    <div class="quote"><i class="fas fa-quote-right"></i></div>
+                    <p class="text">"Finally found a medical center that respects my time. Online booking is so easy and
+                        I
+                        waited less than 10 minutes."</p>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="patient">
+                        <img src="img/users/2.png" alt="Patient">
+                        <div>
+                            <div class="patient-name">Omar Khaled</div>
+                            <div class="patient-title">Business Owner</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-home-card animate-fade-up delay-3">
+                    <div class="quote"><i class="fas fa-quote-right"></i></div>
+                    <p class="text">"The facility is spotless and modern. Lab results came the same day. Truly
+                        exceptional
+                        care."</p>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="patient">
+                        <img src="img/users/6.png" alt="Patient">
+                        <div>
+                            <div class="patient-name">Layla Mansour</div>
+                            <div class="patient-title">Teacher</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 10. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Ready to Experience the <span style="color:var(--gold);">Codry Difference?</span></h2>
+            <p>Book your appointment today and take the first step toward better health.</p>
+            <a href="booking.html" class="btn-white"><i class="fas fa-calendar-check"></i> Book Now</a>
+        </div>
+    </section>
+    <!-- ===== 11. CONTACT INFO ===== -->
+    <section class="contact-home-section animate-fade-up">
+        <div class="container">
+            <div class="section-header">
+                <div class="sub">Contact</div>
+                <h2>Get in <span>Touch</span></h2>
+                <p>We're here to help. Reach out to us anytime.</p>
+            </div>
+            <div class="contact-home-grid">
+                <a href="contact.html" class="contact-home-card animate-fade-up delay-1">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <h4>Call Us</h4>
+                    <p>+123 456 7890</p>
+                </a>
+                <a href="contact.html" class="contact-home-card animate-fade-up delay-2">
+                    <div class="icon"><i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4>WhatsApp</h4>
+                    <p>+123 456 7890</p>
+                </a>
+                <a href="contact.html" class="contact-home-card animate-fade-up delay-3">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <h4>Email</h4>
+                    <p>info@codry.com</p>
+                </a>
+                <a href="contact.html" class="contact-home-card animate-fade-up delay-4">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>Address</h4>
+                    <p>Main Street, City</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i> Codry
+                    </div>
+                    <p class="footer-desc">
+                        Precision healthcare with a human touch. Your health is our mission —
+                        we're here to guide you every step of the way.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                        <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter + Contact + Developer -->
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-group">
+                            <input type="email" placeholder="Your email address" required />
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+123 456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@codry.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Main Street, City</span>
+                        </div>
+                    </div>
+
+                    <!-- Developer Info -->
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-dev">
+                    <!-- <div class="dev-divider"></div> -->
+                    <div class="dev-info">
+                        <i class="fas fa-code"></i>
+                        <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                    </div>
+                    <div class="dev-contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+963982057497">+963 982 057 497</a>
+                    </div>
+                </div>
+                <div class="footer-bottom-container">
+                    <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        const dropdown = document.getElementById('departmentsDropdown');
+        if (dropdown) {
+            dropdown.addEventListener('click', function (e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            this.reset();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+    <script src="csript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,616 @@
+/* ===== 1. HERO ===== */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #08382a 0%, #0d5c42 45%, #00a86b 100%);
+    overflow: hidden;
+    padding: 8rem 2rem 5rem 2rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+}
+
+.hero-shapes .shape-1 {
+    width: 600px;
+    height: 600px;
+    background: #a3f0d0;
+    top: -15%;
+    right: -8%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero-shapes .shape-2 {
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    bottom: -10%;
+    left: 5%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.hero-shapes .shape-3 {
+    width: 250px;
+    height: 250px;
+    background: #a3f0d0;
+    top: 40%;
+    left: -5%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    padding: 0.45rem 1.3rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #d4f4e0;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-badge i {
+    margin-right: 0.5rem;
+    color: #a3f0d0;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-content h1 .highlight {
+    color: #a3f0d0;
+    border-bottom: 4px solid #a3f0d0;
+    display: inline-block;
+    padding-bottom: 0.1rem;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #c8e6db;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-stats .stat-item {
+    text-align: left;
+}
+
+.hero-stats .stat-number {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #a3f0d0;
+    line-height: 1;
+}
+
+.hero-stats .stat-label {
+    font-size: 0.8rem;
+    color: #b0d5c5;
+    letter-spacing: 0.5px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 280px;
+    position: relative;
+}
+
+.hero-image-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.hero-image-card:hover {
+    transform: scale(1.02);
+    border-color: rgba(163, 240, 208, 0.2);
+}
+
+.hero-image-card .main-icon {
+    font-size: 6rem;
+    color: #a3f0d0;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.hero-image-card h3 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.hero-image-card p {
+    color: #b0d5c5;
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+
+.hero-image-card .small-text {
+    font-size: 0.8rem;
+    color: #8ab8a8;
+}
+
+.floating-badge {
+    position: absolute;
+    background: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating-badge i {
+    color: var(--gold);
+    font-size: 1rem;
+}
+
+.floating-badge.badge-1 {
+    top: -10px;
+    right: -10px;
+    animation-delay: 0s;
+}
+
+.floating-badge.badge-2 {
+    bottom: -10px;
+    left: -10px;
+    animation-delay: 1.5s;
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-description {
+        margin: 0 auto;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-stats .stat-item {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .floating-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero {
+        padding: 6rem 1.2rem 3rem 1.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* ===== 2. PHARMACY ===== */
+.pharmacy-section {
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: var(--bg-white);
+}
+
+/* Tools */
+.pharmacy-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--secondary-bg);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(0, 168, 107, 0.06);
+}
+
+.pharmacy-tools .search-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    max-width: 350px;
+}
+
+.pharmacy-tools .search-box input {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--primary-bg-light);
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: var(--bg-white);
+}
+
+.pharmacy-tools .search-box input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 168, 107, 0.1);
+}
+
+.pharmacy-tools .search-box button {
+    padding: 0.7rem 1.2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pharmacy-tools .search-box button:hover {
+    background: var(--primary-dark);
+    transform: scale(1.02);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.4rem 1.2rem;
+    border: 2px solid var(--primary-bg-light);
+    border-radius: 50px;
+    background: transparent;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Drugs Grid */
+.drugs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.drug-card {
+    background: var(--bg-white);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 168, 107, 0.06);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.drug-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary);
+}
+
+.drug-card .drug-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    /* background: var(--primary-bg-light); */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.drug-card:hover .drug-image {
+    transform: scale(1.03);
+}
+
+.drug-card .drug-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.drug-card .drug-content .drug-category {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.drug-card .drug-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin: 0.3rem 0 0.2rem 0;
+}
+
+.drug-card .drug-content .drug-name-ar {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.drug-card .drug-content .drug-desc {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0.5rem 0 1rem 0;
+    flex: 1;
+}
+
+.drug-card .drug-content .drug-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--primary-bg-light);
+}
+
+.drug-card .drug-content .drug-footer .price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.drug-card .drug-content .drug-footer .price span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+.drug-card .drug-content .drug-footer .status {
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.drug-card .drug-content .drug-footer .status.in-stock {
+    background: var(--primary-bg-light);
+    color: var(--primary-dark);
+}
+
+.drug-card .drug-content .drug-footer .status.out-of-stock {
+    background: var(--gold-light);
+    color: #a8893a;
+}
+
+.drug-card .drug-content .drug-footer .status.by-order {
+    background: var(--secondary-bg);
+    color: var(--text-medium);
+}
+
+.drug-card .btn-order {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.drug-card .btn-order:hover {
+    gap: 0.8rem;
+    color: var(--primary-dark);
+}
+
+@media (max-width: 1000px) {
+    .drugs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .drugs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pharmacy-section {
+        padding: 2rem 1.2rem;
+    }
+
+    .pharmacy-tools {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pharmacy-tools .search-box {
+        max-width: 100%;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ===== 3. CTA ===== */
+.cta-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    border-radius: 2rem;
+    padding: 4rem 3rem;
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-hover);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.cta-box h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.cta-box h2 span {
+    color: var(--gold);
+}
+
+.cta-box p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    position: relative;
+}
+
+.cta-box .btn-white {
+    background: white;
+    color: var(--primary-dark);
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.cta-box .btn-white:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 650px) {
+    .cta-box {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .cta-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-section {
+        padding: 2rem 1.2rem;
+    }
+}
+
+/* ===== SCROLL TO TOP ===== */
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 168, 107, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px) scale(1.05);
+}

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codry - Book Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-calendar-check"></i> Book Online</div>
+                <h1>Schedule Your <br><span class="highlight">Appointment</span></h1>
+                <p class="hero-description">Book your visit in just a few clicks. Choose your service, pick your doctor,
+                    and select a time that works for you.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Specialists</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Online Booking</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-card animate-slide-right">
+                <img src="img/services.png"
+                    alt="Booking" />
+                <div class="floating-badge badge-1"><i class="fas fa-star"></i> 4.9 ★</div>
+                <div class="floating-badge badge-2"><i class="fas fa-clock"></i> 12 min avg</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. BOOKING ===== -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Book Now</div>
+            <h2>Book Your <span>Appointment</span></h2>
+            <p>Fill in the details below and we'll confirm your booking within minutes.</p>
+        </div>
+
+        <div class="booking-grid">
+            <!-- FORM -->
+            <div class="booking-form animate-fade-up delay-1">
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="circle">1</div>
+                        <span class="label">Service</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="circle">2</div>
+                        <span class="label">Doctor</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="circle">3</div>
+                        <span class="label">Details</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Service -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-group">
+                        <label><i class="fas fa-stethoscope"></i> Select Service</label>
+                        <select id="serviceSelect">
+                            <option value="">Choose a service...</option>
+                            <option value="Internal Medicine|120">Internal Medicine - $120</option>
+                            <option value="Pediatrics|100">Pediatrics - $100</option>
+                            <option value="Orthopedics|180">Orthopedics - $180</option>
+                            <option value="Gynecology|140">Gynecology - $140</option>
+                            <option value="Dermatology|110">Dermatology - $110</option>
+                            <option value="Cardiology|200">Cardiology - $200</option>
+                        </select>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end;">
+                        <button class="btn-next" onclick="goToStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Doctor -->
+                <div class="form-step" data-step="2">
+                    <div class="form-group">
+                        <label><i class="fas fa-user-md"></i> Select Doctor</label>
+                        <select id="doctorSelect">
+                            <option value="">Choose a doctor...</option>
+                            <option value="Dr. Ahmed Al-Hassan">Dr. Ahmed Al-Hassan - Internal Medicine</option>
+                            <option value="Dr. Layla Mansour">Dr. Layla Mansour - Pediatrics</option>
+                            <option value="Dr. Khalid Noor">Dr. Khalid Noor - Orthopedics</option>
+                            <option value="Dr. Samira Ibrahim">Dr. Samira Ibrahim - Gynecology</option>
+                            <option value="Dr. Omar Khaled">Dr. Omar Khaled - Dermatology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Select Date</label>
+                        <input type="date" id="dateInput" min="2025-01-01" value="2025-01-15" />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-clock"></i> Select Time</label>
+                        <div class="time-slots" id="timeSlots">
+                            <div class="slot" data-time="9:00 AM">9:00 AM</div>
+                            <div class="slot" data-time="10:00 AM">10:00 AM</div>
+                            <div class="slot" data-time="11:00 AM">11:00 AM</div>
+                            <div class="slot" data-time="1:00 PM">1:00 PM</div>
+                            <div class="slot" data-time="2:00 PM">2:00 PM</div>
+                            <div class="slot" data-time="3:00 PM">3:00 PM</div>
+                            <div class="slot" data-time="4:00 PM">4:00 PM</div>
+                            <div class="slot" data-time="5:00 PM">5:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-prev" onclick="goToStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="btn-next" onclick="goToStep(3)">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Details -->
+                <div class="form-step" data-step="3">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="fullName" placeholder="Enter your full name" />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> Additional Notes</label>
+                        <textarea id="notes" rows="3" placeholder="Any special requests or notes..."></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-prev" onclick="goToStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="btn-next" onclick="submitBooking()" style="background:var(--gold);">
+                            <i class="fas fa-check-circle"></i> Confirm Booking
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Confirmation -->
+                <div class="confirmation" id="confirmation">
+                    <div class="icon-wrapper"><i class="fas fa-check-circle"></i></div>
+                    <h2>Booking Confirmed!</h2>
+                    <p>Your appointment has been scheduled. We'll send you a confirmation email shortly.</p>
+                    <div class="ref-number">#COD-2025-001</div>
+                    <button class="btn-next" onclick="resetBooking()" style="margin-top:1.5rem;">
+                        <i class="fas fa-redo"></i> Book Another
+                    </button>
+                </div>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="booking-summary animate-fade-up delay-2">
+                <h3><i class="fas fa-receipt"></i> Booking Summary</h3>
+                <div class="summary-item">
+                    <span class="label">Service</span>
+                    <span class="value" id="summaryService">—</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Doctor</span>
+                    <span class="value" id="summaryDoctor">—</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Date</span>
+                    <span class="value" id="summaryDate">—</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Time</span>
+                    <span class="value" id="summaryTime">—</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Patient</span>
+                    <span class="value" id="summaryPatient">—</span>
+                </div>
+                <div class="summary-item total">
+                    <span class="label">Total</span>
+                    <span class="value" id="summaryTotal">$0</span>
+                </div>
+            </div>
+        </div></div>
+    </section>
+
+    <!-- ===== 3. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Need Help Booking?</h2>
+            <p>Call us directly and we'll schedule your appointment over the phone.</p>
+            <a href="#" class="btn-white"><i class="fas fa-phone"></i> Call +123 456 7890</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div></div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Navigation
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Scroll to Top
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== BOOKING LOGIC =====
+        let currentStep = 1;
+        let selectedTime = '';
+
+        // Time slot selection
+        document.querySelectorAll('.time-slots .slot').forEach(slot => {
+            slot.addEventListener('click', function () {
+                if (this.classList.contains('disabled')) return;
+                document.querySelectorAll('.time-slots .slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedTime = this.dataset.time;
+                updateSummary();
+            });
+        });
+
+        // Update summary on form changes
+        document.getElementById('serviceSelect').addEventListener('change', updateSummary);
+        document.getElementById('doctorSelect').addEventListener('change', updateSummary);
+        document.getElementById('dateInput').addEventListener('change', updateSummary);
+        document.getElementById('fullName').addEventListener('input', updateSummary);
+
+        function updateSummary() {
+            const service = document.getElementById('serviceSelect');
+            const doctor = document.getElementById('doctorSelect');
+            const date = document.getElementById('dateInput');
+            const name = document.getElementById('fullName');
+
+            document.getElementById('summaryService').textContent = service.value ? service.value.split('|')[0] : '—';
+            document.getElementById('summaryDoctor').textContent = doctor.value || '—';
+            document.getElementById('summaryDate').textContent = date.value || '—';
+            document.getElementById('summaryTime').textContent = selectedTime || '—';
+            document.getElementById('summaryPatient').textContent = name.value || '—';
+
+            // Calculate total
+            let total = 0;
+            if (service.value) {
+                const parts = service.value.split('|');
+                if (parts.length > 1) total = parseInt(parts[1]);
+            }
+            document.getElementById('summaryTotal').textContent = total > 0 ? `$${total}` : '$0';
+        }
+
+        function goToStep(step) {
+            // Validate
+            if (step > currentStep) {
+                if (step === 2) {
+                    const service = document.getElementById('serviceSelect');
+                    if (!service.value) {
+                        alert('Please select a service first.');
+                        return;
+                    }
+                }
+                if (step === 3) {
+                    const doctor = document.getElementById('doctorSelect');
+                    const date = document.getElementById('dateInput');
+                    if (!doctor.value) {
+                        alert('Please select a doctor.');
+                        return;
+                    }
+                    if (!selectedTime) {
+                        alert('Please select a time slot.');
+                        return;
+                    }
+                }
+            }
+
+            currentStep = step;
+
+            // Update steps
+            document.querySelectorAll('.step-indicator .step').forEach(el => {
+                const s = parseInt(el.dataset.step);
+                el.classList.remove('active', 'done');
+                if (s === currentStep) el.classList.add('active');
+                else if (s < currentStep) el.classList.add('done');
+            });
+
+            // Update forms
+            document.querySelectorAll('.form-step').forEach(el => {
+                el.classList.remove('active');
+                if (parseInt(el.dataset.step) === currentStep) el.classList.add('active');
+            });
+
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function submitBooking() {
+            const name = document.getElementById('fullName');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+
+            if (!name.value || !email.value || !phone.value) {
+                alert('Please fill in all your details.');
+                return;
+            }
+
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById('confirmation').classList.add('show');
+            updateSummary();
+        }
+
+        function resetBooking() {
+            document.getElementById('confirmation').classList.remove('show');
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.querySelector('.form-step[data-step="1"]').classList.add('active');
+
+            document.getElementById('serviceSelect').value = '';
+            document.getElementById('doctorSelect').value = '';
+            document.getElementById('fullName').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('notes').value = '';
+            document.querySelectorAll('.time-slots .slot').forEach(s => s.classList.remove('selected'));
+            selectedTime = '';
+
+            currentStep = 1;
+            document.querySelectorAll('.step-indicator .step').forEach(el => {
+                el.classList.remove('active', 'done');
+                if (parseInt(el.dataset.step) === 1) el.classList.add('active');
+            });
+
+            updateSummary();
+        }
+
+        updateSummary();
+
+        // ===== SCROLL ANIMATION =====
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

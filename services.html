@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codry - Our Services</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li class="dropdown" id="departmentsDropdown">
+                        <a href="#">
+                            Departments <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                            <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                            <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                            <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                            <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                            <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-heartbeat"></i> Our Services</div>
+                <h1>Comprehensive <br><span class="highlight">Healthcare</span> Solutions</h1>
+                <p class="hero-description">From routine checkups to specialized treatments — we offer a wide range of
+                    medical services tailored to your needs.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Medical Services</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12k+</div>
+                        <div class="stat-label">Patients Treated</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-card animate-slide-right">
+                <img src="img/services.png" alt="Medical Services" />
+                <div class="floating-badge badge-1"><i class="fas fa-star"></i> Trusted Care</div>
+                <div class="floating-badge badge-2"><i class="fas fa-clock"></i> 12 min avg</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. FILTER ===== -->
+    <section class="filter-section animate-fade-up">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Services</button>
+                <button class="filter-btn" data-filter="general">General</button>
+                <button class="filter-btn" data-filter="specialized">Specialized</button>
+                <button class="filter-btn" data-filter="children">Children</button>
+                <button class="filter-btn" data-filter="women">Women</button>
+                <button class="filter-btn" data-filter="mental">Mental Health</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3. SERVICES ===== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card animate-zoom delay-1" data-category="general">
+                    <img src="img/services/1.png" class="card-image" alt="Internal Medicine" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
+                        <span class="card-tag">General</span>
+                        <h3>Internal Medicine</h3>
+                        <p class="description">Comprehensive diagnosis and treatment for chronic conditions, preventive
+                            care, and overall wellness.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 95%; width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$120 <span>/ visit</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card animate-zoom delay-2" data-category="children">
+                    <img src="img/services/2.png" class="card-image" alt="Pediatrics" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-baby"></i></div>
+                        <span class="card-tag">Children</span>
+                        <h3>Pediatrics</h3>
+                        <p class="description">Compassionate care for children from birth through adolescence.
+                            Vaccinations,
+                            growth monitoring, and more.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 92%; width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$100 <span>/ visit</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card animate-zoom delay-3" data-category="specialized">
+                    <img src="img/blog/blog3.png" class="card-image" alt="Orthopedics" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-bone"></i></div>
+                        <span class="card-tag">Specialized</span>
+                        <h3>Orthopedics</h3>
+                        <p class="description">Advanced treatment for bone, joint, muscle conditions. Sports injuries,
+                            fractures, and rehabilitation.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 90%; width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$180 <span>/ visit</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card animate-zoom delay-4" data-category="women">
+                    <img src="img/services/4.png" class="card-image" alt="Gynecology" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-female"></i></div>
+                        <span class="card-tag">Women</span>
+                        <h3>Gynecology</h3>
+                        <p class="description">Complete women's health services from adolescence to menopause. Routine
+                            exams, prenatal care, and more.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>94%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 94%; width: 94%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$140 <span>/ visit</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card animate-zoom delay-5" data-category="mental">
+                    <img src="img/blog/blog1.png" class="card-image" alt="Psychology" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        <span class="card-tag">Mental Health</span>
+                        <h3>Psychology</h3>
+                        <p class="description">Professional mental health support for anxiety, depression, trauma, and
+                            emotional well-being.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 88%; width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$110 <span>/ session</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card animate-zoom delay-6" data-category="specialized">
+                    <img src="img/services/6.png" class="card-image" alt="Cardiology" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                        <span class="card-tag">Specialized</span>
+                        <h3>Cardiology</h3>
+                        <p class="description">Comprehensive heart health services including EKG, echocardiography, and
+                            cardiovascular risk assessment.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>93%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 93%; width: 93%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$200 <span>/ visit</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card animate-zoom delay-7" data-category="general">
+                    <img src="img/services/7.png" class="card-image" alt="Dentistry" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-tooth"></i></div>
+                        <span class="card-tag">General</span>
+                        <h3>Dentistry</h3>
+                        <p class="description">Complete dental care including cleaning, fillings, crowns, implants, and
+                            cosmetic dentistry services.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>91%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 91%; width: 91%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$90 <span>/ visit</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card animate-zoom delay-8" data-category="women">
+                    <img src="img/services.png" class="card-image" alt="Obstetrics" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-heart"></i></div>
+                        <span class="card-tag">Women</span>
+                        <h3>Obstetrics</h3>
+                        <p class="description">Prenatal care, pregnancy monitoring, and postpartum support for expecting
+                            mothers and newborns.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>96%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 96%; width: 96%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$160 <span>/ visit</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="service-card animate-zoom delay-9" data-category="mental">
+                    <img src="img/services/9.png" class="card-image" alt="Psychiatry" />
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-user-md"></i></div>
+                        <span class="card-tag">Mental Health</span>
+                        <h3>Psychiatry</h3>
+                        <p class="description">Medical diagnosis and treatment for mental health conditions including
+                            medication management and therapy.</p>
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Expertise</span>
+                                <span>87%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="--progress: 87%; width: 87%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">$150 <span>/ session</span></div>
+                            <a href="#" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Ready to Book Your Appointment?</h2>
+            <p>Choose a service that fits your needs and book with our specialists today.</p>
+            <a href="#" class="btn-white"><i class="fas fa-calendar-check"></i> Book Now</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i> Codry
+                    </div>
+                    <p class="footer-desc">
+                        Precision healthcare with a human touch. Your health is our mission —
+                        we're here to guide you every step of the way.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                        <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter + Contact + Developer -->
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-group">
+                            <input type="email" placeholder="Your email address" required />
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+123 456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@codry.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Main Street, City</span>
+                        </div>
+                    </div>
+
+                    <!-- Developer Info -->
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-dev">
+                    <!-- <div class="dev-divider"></div> -->
+                    <div class="dev-info">
+                        <i class="fas fa-code"></i>
+                        <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                    </div>
+                    <div class="dev-contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+963982057497">+963 982 057 497</a>
+                    </div>
+                </div>
+                <div class="footer-bottom-container">
+                    <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Navigation Toggle
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Scroll to Top
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== FILTER FUNCTIONALITY =====
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                serviceCards.forEach(card => {
+                    const category = card.dataset.category;
+
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'zoomIn 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ===== SCROLL ANIMATION OBSERVER =====
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right, .animate-zoom')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

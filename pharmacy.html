@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Codry - Pharmacy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/pharmacy.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-prescription-bottle"></i> Our Pharmacy</div>
+                <h1>Your Health <br><span class="highlight">Starts Here</span></h1>
+                <p class="hero-description">Quality medications, trusted brands, and expert advice — all in one place. Browse our extensive range of medicines.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Medications</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Pharmacy Access</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Availability</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate-slide-right">
+                <div class="hero-image-card">
+                    <i class="fas fa-prescription-bottle main-icon"></i>
+                    <h3>Codry Pharmacy</h3>
+                    <p>Trusted • Quality • Affordable</p>
+                    <small class="small-text">📍 Your health, our priority</small>
+                    <div class="floating-badge badge-1"><i class="fas fa-check-circle"></i> Trusted Brands</div>
+                    <div class="floating-badge badge-2"><i class="fas fa-truck"></i> Fast Delivery</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. PHARMACY ===== -->
+    <section class="pharmacy-section animate-fade-up">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Medications</div>
+            <h2>Available <span>Medicines</span></h2>
+            <p>Browse our curated selection of quality medications for all your health needs.</p>
+        </div>
+
+        <!-- Tools -->
+        <div class="pharmacy-tools animate-fade-up">
+            <div class="search-box">
+                <input type="text" placeholder="Search for a medication..." id="searchDrug" />
+                <button onclick="searchDrug()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pain"> Pain Relief</button>
+                <button class="filter-btn" data-filter="antibiotic"> Antibiotics</button>
+                <button class="filter-btn" data-filter="vitamin"> Vitamins</button>
+                <button class="filter-btn" data-filter="chronic"> Chronic Care</button>
+            </div>
+        </div>
+
+        <!-- Drugs Grid -->
+        <div class="drugs-grid" id="drugsGrid">
+
+            <!-- Drug 1 -->
+            <div class="drug-card animate-fade-up delay-1" data-category="pain">
+                <img src="img/pharmacy/1.png" class="drug-image" alt="Panadol" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Pain Relief</span>
+                    <h3>Panadol Extra</h3>
+                    <span class="drug-name-ar">بانادول إكسترا</span>
+                    <p class="drug-desc">Fast-acting pain relief for headaches, fever, and muscle aches.</p>
+                    <div class="drug-footer">
+                        <span class="price">$8.50 <span>/ pack</span></span>
+                        <span class="status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    </div>
+                    <a href="#" class="btn-order">Order Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Drug 2 -->
+            <div class="drug-card animate-fade-up delay-2" data-category="antibiotic">
+                <img src="img/pharmacy/2.png" class="drug-image" alt="Amoxicillin" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Antibiotics</span>
+                    <h3>Amoxicillin 500mg</h3>
+                    <span class="drug-name-ar">أموكسيسيلين</span>
+                    <p class="drug-desc">Broad-spectrum antibiotic for bacterial infections. Prescription required.</p>
+                    <div class="drug-footer">
+                        <span class="price">$12.00 <span>/ pack</span></span>
+                        <span class="status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    </div>
+                    <a href="#" class="btn-order">Order Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Drug 3 -->
+            <div class="drug-card animate-fade-up delay-3" data-category="vitamin">
+                <img src="img/pharmacy/3.png" class="drug-image" alt="Vitamin C" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Vitamins</span>
+                    <h3>Vitamin C 1000mg</h3>
+                    <span class="drug-name-ar">فيتامين سي</span>
+                    <p class="drug-desc">Boost your immune system with high-potency vitamin C tablets.</p>
+                    <div class="drug-footer">
+                        <span class="price">$15.00 <span>/ pack</span></span>
+                        <span class="status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    </div>
+                    <a href="#" class="btn-order">Order Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Drug 4 -->
+            <div class="drug-card animate-fade-up delay-4" data-category="chronic">
+                <img src="img/pharmacy/4.png" class="drug-image" alt="Metformin" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Chronic Care</span>
+                    <h3>Metformin 850mg</h3>
+                    <span class="drug-name-ar">ميتفورمين</span>
+                    <p class="drug-desc">For managing type 2 diabetes. Prescription required.</p>
+                    <div class="drug-footer">
+                        <span class="price">$18.50 <span>/ pack</span></span>
+                        <span class="status out-of-stock"><i class="fas fa-times-circle"></i> Out of Stock</span>
+                    </div>
+                    <a href="#" class="btn-order">Notify Me <i class="fas fa-bell"></i></a>
+                </div>
+            </div>
+
+            <!-- Drug 5 -->
+            <div class="drug-card animate-fade-up delay-5" data-category="pain">
+                <img src="img/pharmacy/5.png" class="drug-image" alt="Ibuprofen" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Pain Relief</span>
+                    <h3>Ibuprofen 400mg</h3>
+                    <span class="drug-name-ar">إيبوبروفين</span>
+                    <p class="drug-desc">Anti-inflammatory pain relief for muscle aches and joint pain.</p>
+                    <div class="drug-footer">
+                        <span class="price">$9.00 <span>/ pack</span></span>
+                        <span class="status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    </div>
+                    <a href="#" class="btn-order">Order Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Drug 6 -->
+            <div class="drug-card animate-fade-up delay-6" data-category="antibiotic">
+                <img src="img/pharmacy/6.png" class="drug-image" alt="Azithromycin" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Antibiotics</span>
+                    <h3>Azithromycin 250mg</h3>
+                    <span class="drug-name-ar">أزيثرومايسين</span>
+                    <p class="drug-desc">Effective for respiratory and skin infections. Prescription required.</p>
+                    <div class="drug-footer">
+                        <span class="price">$22.00 <span>/ pack</span></span>
+                        <span class="status by-order"><i class="fas fa-clock"></i> By Order</span>
+                    </div>
+                    <a href="#" class="btn-order">Pre-Order <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Drug 7 -->
+            <div class="drug-card animate-fade-up delay-7" data-category="vitamin">
+                <img src="img/pharmacy/7.png" class="drug-image" alt="Vitamin D" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Vitamins</span>
+                    <h3>Vitamin D3 2000IU</h3>
+                    <span class="drug-name-ar">فيتامين د</span>
+                    <p class="drug-desc">Essential for bone health and immune system support.</p>
+                    <div class="drug-footer">
+                        <span class="price">$20.00 <span>/ pack</span></span>
+                        <span class="status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    </div>
+                    <a href="#" class="btn-order">Order Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Drug 8 -->
+            <div class="drug-card animate-fade-up delay-8" data-category="chronic">
+                <img src="img/pharmacy/8.png" class="drug-image" alt="Lisinopril" />
+                <div class="drug-content">
+                    <span class="drug-category"><i class="fas fa-tag"></i> Chronic Care</span>
+                    <h3>Lisinopril 10mg</h3>
+                    <span class="drug-name-ar">ليزينوبريل</span>
+                    <p class="drug-desc">For managing high blood pressure. Prescription required.</p>
+                    <div class="drug-footer">
+                        <span class="price">$16.00 <span>/ pack</span></span>
+                        <span class="status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    </div>
+                    <a href="#" class="btn-order">Order Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div></div>
+    </section>
+
+    <!-- ===== 3. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Need <span>Medication</span> Advice?</h2>
+            <p>Our pharmacists are here to help you choose the right medication for your needs.</p>
+            <a href="#" class="btn-white"><i class="fas fa-phone"></i> Contact Pharmacist</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div></div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== FILTER =====
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const drugCards = document.querySelectorAll('.drug-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                drugCards.forEach(card => {
+                    const category = card.dataset.category;
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'flex';
+                        card.style.animation = 'fadeUp 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ===== SEARCH =====
+        function searchDrug() {
+            const query = document.getElementById('searchDrug').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.drug-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const nameAr = card.querySelector('.drug-name-ar').textContent.toLowerCase();
+                const desc = card.querySelector('.drug-desc').textContent.toLowerCase();
+
+                if (name.includes(query) || nameAr.includes(query) || desc.includes(query) || query === '') {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeUp 0.6s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('searchDrug').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchDrug();
+        });
+
+        // ===== NEWSLETTER =====
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+
+        // ===== SCROLL ANIMATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+</html>

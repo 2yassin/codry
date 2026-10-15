@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Codry - Medical Tests</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/midicai-test.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>    
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-flask"></i> Laboratory Tests</div>
+                <h1>Advanced <br><span class="highlight">Medical Testing</span></h1>
+                <p class="hero-description">Accurate, fast, and reliable diagnostic tests to help you understand your health better.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Test Types</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Results Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate-slide-right">
+                <div class="hero-image-card">
+                    <i class="fas fa-flask main-icon"></i>
+                    <h3>Codry Lab</h3>
+                    <p>Accurate • Reliable • Fast</p>
+                    <small class="small-text">📍 Your health, our priority</small>
+                    <div class="floating-badge badge-1"><i class="fas fa-check-circle"></i> Certified Lab</div>
+                    <div class="floating-badge badge-2"><i class="fas fa-clock"></i> Fast Results</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. TESTS ===== -->
+    <section class="tests-section animate-fade-up">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Our Tests</div>
+            <h2>Available <span>Medical Tests</span></h2>
+            <p>Browse our comprehensive range of diagnostic tests for accurate health assessment.</p>
+        </div>
+
+        <!-- Tools -->
+        <div class="tests-tools animate-fade-up">
+            <div class="search-box">
+                <input type="text" placeholder="Search for a test..." id="searchTest" />
+                <button onclick="searchTest()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="blood"> Blood Tests</button>
+                <button class="filter-btn" data-filter="urine"> Urine Tests</button>
+                <button class="filter-btn" data-filter="hormone"> Hormones</button>
+                <button class="filter-btn" data-filter="virus"> Virus & Infection</button>
+            </div>
+        </div>
+
+        <!-- Tests Grid -->
+        <div class="tests-grid" id="testsGrid">
+
+            <!-- Test 1 -->
+            <div class="test-card animate-fade-up delay-1" data-category="blood">
+                <div class="test-icon"><img src="img/test/t1.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Blood Test</span>
+                    <h3>Complete Blood Count (CBC)</h3>
+                    <span class="test-name-ar">صورة دم كاملة</span>
+                    <p class="test-desc">Measures red and white blood cells, hemoglobin, and platelets to detect infections and anemia.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 2 hours</span>
+                        <span><i class="fas fa-user-md"></i> No prep</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$25 <span>/ test</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Test 2 -->
+            <div class="test-card animate-fade-up delay-2" data-category="blood">
+                <div class="test-icon"><img src="img/test/t2.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Blood Test</span>
+                    <h3>Lipid Profile</h3>
+                    <span class="test-name-ar">دهون الدم</span>
+                    <p class="test-desc">Measures cholesterol and triglycerides to assess heart health and cardiovascular risk.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 3 hours</span>
+                        <span><i class="fas fa-user-md"></i> Fasting required</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$35 <span>/ test</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Test 3 -->
+            <div class="test-card animate-fade-up delay-3" data-category="hormone">
+                <div class="test-icon"><img src="img/test/t3.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Hormones</span>
+                    <h3>Thyroid Function Test (T3, T4, TSH)</h3>
+                    <span class="test-name-ar">وظائف الغدة الدرقية</span>
+                    <p class="test-desc">Evaluates thyroid hormone levels to diagnose hyperthyroidism or hypothyroidism.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 4 hours</span>
+                        <span><i class="fas fa-user-md"></i> No prep</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$50 <span>/ test</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Test 4 -->
+            <div class="test-card animate-fade-up delay-4" data-category="urine">
+                <div class="test-icon"><img src="img/test/t4.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Urine Test</span>
+                    <h3>Urinalysis</h3>
+                    <span class="test-name-ar">تحليل البول</span>
+                    <p class="test-desc">Detects urinary tract infections, kidney disease, and metabolic disorders.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 1 hour</span>
+                        <span><i class="fas fa-user-md"></i> No prep</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$15 <span>/ test</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Test 5 -->
+            <div class="test-card animate-fade-up delay-5" data-category="virus">
+                <div class="test-icon"><img src="img/test/t5.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Virus & Infection</span>
+                    <h3>COVID-19 PCR Test</h3>
+                    <span class="test-name-ar">فحص كوفيد-19</span>
+                    <p class="test-desc">Detects active COVID-19 infection with high accuracy. Results in 12-24 hours.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 12-24 hours</span>
+                        <span><i class="fas fa-user-md"></i> No prep</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$60 <span>/ test</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Test 6 -->
+            <div class="test-card animate-fade-up delay-6" data-category="hormone">
+                <div class="test-icon"><img src="img/test/t6.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Hormones</span>
+                    <h3>Diabetes Screen (HbA1c)</h3>
+                    <span class="test-name-ar">فحص السكري التراكمي</span>
+                    <p class="test-desc">Measures average blood sugar levels over 3 months to diagnose or monitor diabetes.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 3 hours</span>
+                        <span><i class="fas fa-user-md"></i> No prep</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$30 <span>/ test</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Test 7 -->
+            <div class="test-card animate-fade-up delay-7" data-category="blood">
+                <div class="test-icon"><img src="img/test/t7.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Blood Test</span>
+                    <h3>Iron Studies (Ferritin, Iron, TIBC)</h3>
+                    <span class="test-name-ar">فحص الحديد</span>
+                    <p class="test-desc">Measures iron levels to diagnose anemia and iron deficiency disorders.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 3 hours</span>
+                        <span><i class="fas fa-user-md"></i> Fasting required</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$40 <span>/ test</span></span>
+                        <span class="status by-appointment"><i class="fas fa-clock"></i> By Appointment</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Test 8 -->
+            <div class="test-card animate-fade-up delay-8" data-category="virus">
+                <div class="test-icon"><img src="img/test/t8.png" alt=""></div>
+                <div class="test-content">
+                    <span class="test-category"><i class="fas fa-tag"></i> Virus & Infection</span>
+                    <h3>Hepatitis B & C Screening</h3>
+                    <span class="test-name-ar">فحص التهاب الكبد</span>
+                    <p class="test-desc">Screens for Hepatitis B and C viruses for early detection and treatment.</p>
+                    <div class="test-details">
+                        <span><i class="fas fa-clock"></i> 24 hours</span>
+                        <span><i class="fas fa-user-md"></i> No prep</span>
+                        <span><i class="fas fa-check-circle"></i> Results online</span>
+                    </div>
+                    <div class="test-footer">
+                        <span class="price">$75 <span>/ test</span></span>
+                        <span class="status by-appointment"><i class="fas fa-clock"></i> By Appointment</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Test <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div></div>
+    </section>
+
+    <!-- ===== 3. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Need a <span>Test</span> Consultation?</h2>
+            <p>Our lab specialists are here to help you choose the right tests for your health needs.</p>
+            <a href="#" class="btn-white"><i class="fas fa-phone"></i> Contact Lab</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div></div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== FILTER =====
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const testCards = document.querySelectorAll('.test-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                testCards.forEach(card => {
+                    const category = card.dataset.category;
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'flex';
+                        card.style.animation = 'fadeUp 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ===== SEARCH =====
+        function searchTest() {
+            const query = document.getElementById('searchTest').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.test-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const nameAr = card.querySelector('.test-name-ar').textContent.toLowerCase();
+                const desc = card.querySelector('.test-desc').textContent.toLowerCase();
+
+                if (name.includes(query) || nameAr.includes(query) || desc.includes(query) || query === '') {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeUp 0.6s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('searchTest').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchTest();
+        });
+
+        // ===== NEWSLETTER =====
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+
+        // ===== SCROLL ANIMATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+</html>

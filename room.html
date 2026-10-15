@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Codry - Room Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/room.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+
+     <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-bed"></i> Room Booking</div>
+                <h1>Comfortable <br><span class="highlight">Patient Rooms</span></h1>
+                <p class="hero-description">Book a comfortable and well-equipped room for your hospital stay. Choose from our range of rooms designed for your comfort and recovery.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Available Rooms</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Room Types</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Room Service</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate-slide-right">
+                <div class="hero-image-card">
+                    <i class="fas fa-bed main-icon"></i>
+                    <h3>Codry Rooms</h3>
+                    <p>Comfortable • Modern • Caring</p>
+                    <small class="small-text">📍 Your comfort, our priority</small>
+                    <div class="floating-badge badge-1"><i class="fas fa-check-circle"></i> Premium Service</div>
+                    <div class="floating-badge badge-2"><i class="fas fa-clock"></i> 24/7 Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. ROOMS ===== -->
+    <section class="rooms-section animate-fade-up">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Our Rooms</div>
+            <h2>Available <span>Patient Rooms</span></h2>
+            <p>Browse our range of comfortable and well-equipped patient rooms for your hospital stay.</p>
+        </div>
+
+        <!-- Tools -->
+        <div class="rooms-tools animate-fade-up">
+            <div class="search-box">
+                <input type="text" placeholder="Search for a room..." id="searchRoom" />
+                <button onclick="searchRoom()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="private"> Private</button>
+                <button class="filter-btn" data-filter="family"> Family</button>
+                <button class="filter-btn" data-filter="suite"> Suite</button>
+                <button class="filter-btn" data-filter="isolation"> Isolation</button>
+            </div>
+        </div>
+
+        <!-- Rooms Grid -->
+        <div class="rooms-grid" id="roomsGrid">
+
+            <!-- Room 1 -->
+            <div class="room-card animate-fade-up delay-1" data-category="private">
+                <img src="img/rooms/1.png" class="room-image" alt="Private Room" />
+                <div class="room-content">
+                    <span class="room-category"><i class="fas fa-tag"></i> Private Room</span>
+                    <h3>Private Single Room</h3>
+                    <span class="room-name-ar">غرفة خاصة مفردة</span>
+                    <p class="room-desc">Comfortable private room with attached bathroom, TV, and 24/7 nursing care.</p>
+                    <div class="room-details">
+                        <span><i class="fas fa-user"></i> 1 Patient</span>
+                        <span><i class="fas fa-bed"></i> 1 Bed</span>
+                        <span><i class="fas fa-bath"></i> Attached Bathroom</span>
+                    </div>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i> TV</span>
+                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                        <span><i class="fas fa-phone"></i> Nurse Call</span>
+                        <span><i class="fas fa-snowflake"></i> AC</span>
+                    </div>
+                    <div class="room-footer">
+                        <span class="price">$150 <span>/ night</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Room 2 -->
+            <div class="room-card animate-fade-up delay-2" data-category="family">
+                <img src="img/rooms/2.png" class="room-image" alt="Family Room" />
+                <div class="room-content">
+                    <span class="room-category"><i class="fas fa-tag"></i> Family Room</span>
+                    <h3>Family Room</h3>
+                    <span class="room-name-ar">غرفة عائلية</span>
+                    <p class="room-desc">Spacious room with two beds, seating area, and space for family members to stay.</p>
+                    <div class="room-details">
+                        <span><i class="fas fa-user"></i> 2-3 Patients</span>
+                        <span><i class="fas fa-bed"></i> 2 Beds</span>
+                        <span><i class="fas fa-bath"></i> Attached Bathroom</span>
+                    </div>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i> TV</span>
+                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                        <span><i class="fas fa-phone"></i> Nurse Call</span>
+                        <span><i class="fas fa-couch"></i> Seating Area</span>
+                    </div>
+                    <div class="room-footer">
+                        <span class="price">$250 <span>/ night</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="room-card animate-fade-up delay-3" data-category="suite">
+                <img src="img/rooms/3.png" class="room-image" alt="Suite" />
+                <div class="room-content">
+                    <span class="room-category"><i class="fas fa-tag"></i> Suite</span>
+                    <h3>Executive Suite</h3>
+                    <span class="room-name-ar">جناح تنفيذي</span>
+                    <p class="room-desc">Luxurious suite with separate living room, bedroom, and premium amenities.</p>
+                    <div class="room-details">
+                        <span><i class="fas fa-user"></i> 1-2 Patients</span>
+                        <span><i class="fas fa-bed"></i> 1 King Bed</span>
+                        <span><i class="fas fa-bath"></i> Attached Bathroom</span>
+                    </div>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i> 2 TVs</span>
+                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                        <span><i class="fas fa-phone"></i> Nurse Call</span>
+                        <span><i class="fas fa-coffee"></i> Minibar</span>
+                        <span><i class="fas fa-snowflake"></i> AC</span>
+                        <span><i class="fas fa-couch"></i> Living Room</span>
+                    </div>
+                    <div class="room-footer">
+                        <span class="price">$400 <span>/ night</span></span>
+                        <span class="status available"><i class="fas fa-check-circle"></i> Available</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Room 4 -->
+            <div class="room-card animate-fade-up delay-4" data-category="isolation">
+                <img src="img/rooms/4.png" class="room-image" alt="Isolation Room" />
+                <div class="room-content">
+                    <span class="room-category"><i class="fas fa-tag"></i> Isolation Room</span>
+                    <h3>Isolation Room</h3>
+                    <span class="room-name-ar">غرفة عزل</span>
+                    <p class="room-desc">Private room with negative pressure and specialized equipment for infectious diseases.</p>
+                    <div class="room-details">
+                        <span><i class="fas fa-user"></i> 1 Patient</span>
+                        <span><i class="fas fa-bed"></i> 1 Bed</span>
+                        <span><i class="fas fa-bath"></i> Attached Bathroom</span>
+                    </div>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i> TV</span>
+                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                        <span><i class="fas fa-phone"></i> Nurse Call</span>
+                        <span><i class="fas fa-shield-virus"></i> Negative Pressure</span>
+                    </div>
+                    <div class="room-footer">
+                        <span class="price">$200 <span>/ night</span></span>
+                        <span class="status by-appointment"><i class="fas fa-clock"></i> By Appointment</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Room 5 -->
+            <div class="room-card animate-fade-up delay-5" data-category="private">
+                <img src="img/rooms/5.png" class="room-image" alt="Deluxe Private" />
+                <div class="room-content">
+                    <span class="room-category"><i class="fas fa-tag"></i> Private Room</span>
+                    <h3>Deluxe Private Room</h3>
+                    <span class="room-name-ar">غرفة خاصة ديلوكس</span>
+                    <p class="room-desc">Premium private room with all amenities, premium bedding, and enhanced comfort.</p>
+                    <div class="room-details">
+                        <span><i class="fas fa-user"></i> 1 Patient</span>
+                        <span><i class="fas fa-bed"></i> 1 Queen Bed</span>
+                        <span><i class="fas fa-bath"></i> Attached Bathroom</span>
+                    </div>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i> TV</span>
+                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                        <span><i class="fas fa-phone"></i> Nurse Call</span>
+                        <span><i class="fas fa-snowflake"></i> AC</span>
+                        <span><i class="fas fa-coffee"></i> Minibar</span>
+                    </div>
+                    <div class="room-footer">
+                        <span class="price">$220 <span>/ night</span></span>
+                        <span class="status booked"><i class="fas fa-times-circle"></i> Booked</span>
+                    </div>
+                    <a href="#" class="btn-book">Notify Me <i class="fas fa-bell"></i></a>
+                </div>
+            </div>
+
+            <!-- Room 6 -->
+            <div class="room-card animate-fade-up delay-6" data-category="family">
+                <img src="img/rooms/6.png" class="room-image" alt="Family Suite" />
+                <div class="room-content">
+                    <span class="room-category"><i class="fas fa-tag"></i> Family Room</span>
+                    <h3>Family Suite</h3>
+                    <span class="room-name-ar">جناح عائلي</span>
+                    <p class="room-desc">Spacious suite with two bedrooms, living room, and kitchenette for extended family stays.</p>
+                    <div class="room-details">
+                        <span><i class="fas fa-user"></i> 2-4 Patients</span>
+                        <span><i class="fas fa-bed"></i> 3 Beds</span>
+                        <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                    </div>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i> 2 TVs</span>
+                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                        <span><i class="fas fa-phone"></i> Nurse Call</span>
+                        <span><i class="fas fa-couch"></i> Living Room</span>
+                        <span><i class="fas fa-utensils"></i> Kitchenette</span>
+                    </div>
+                    <div class="room-footer">
+                        <span class="price">$350 <span>/ night</span></span>
+                        <span class="status maintenance"><i class="fas fa-tools"></i> Maintenance</span>
+                    </div>
+                    <a href="#" class="btn-book">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div></div>
+    </section>
+
+    <!-- ===== 3. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Need Help <span>Choosing</span> a Room?</h2>
+            <p>Our team is here to help you find the perfect room for your hospital stay.</p>
+            <a href="#" class="btn-white"><i class="fas fa-phone"></i> Contact Reception</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div></div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== FILTER =====
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const roomCards = document.querySelectorAll('.room-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                roomCards.forEach(card => {
+                    const category = card.dataset.category;
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'flex';
+                        card.style.animation = 'fadeUp 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ===== SEARCH =====
+        function searchRoom() {
+            const query = document.getElementById('searchRoom').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.room-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const nameAr = card.querySelector('.room-name-ar').textContent.toLowerCase();
+                const desc = card.querySelector('.room-desc').textContent.toLowerCase();
+
+                if (name.includes(query) || nameAr.includes(query) || desc.includes(query) || query === '') {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeUp 0.6s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('searchRoom').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchRoom();
+        });
+
+        // ===== NEWSLETTER =====
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+
+        // ===== SCROLL ANIMATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+</html>

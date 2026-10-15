@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Codry - Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i> Codry
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown" id="departmentsDropdown">
+                    <a href="#">
+                        Departments <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                        <li><a href="medicai-test.html"><i class="fas fa-flask"></i> Lab Tests</a></li>
+                        <li><a href="radiolagy.html"><i class="fas fa-x-ray"></i> Radiology</a></li>
+                        <li><a href="pharmacy.html"><i class="fas fa-prescription-bottle"></i> Pharmacy</a></li>
+                        <li><a href="room.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                        <li><a href="emergency-ambulance.html"><i class="fas fa-ambulance"></i> Emergency</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div></div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate-slide-left">
+                <div class="hero-badge"><i class="fas fa-credit-card"></i> Secure Payment</div>
+                <h1>Complete Your <br><span class="highlight">Payment</span></h1>
+                <p class="hero-description">Choose your payment method and complete your transaction securely.</p>
+            </div>
+            <div class="hero-image-card animate-slide-right">
+                <img src="img/pay.png" alt="Payment" />
+                <div class="floating-badge badge-1"><i class="fas fa-lock"></i> Secure</div>
+                <div class="floating-badge badge-2"><i class="fas fa-shield-alt"></i> Protected</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 2. PAYMENT ===== -->
+    <section class="payment-section" id="payment">
+        <div class="container">
+        <div class="section-header animate-fade-up">
+            <div class="sub">Payment</div>
+            <h2>Secure <span>Checkout</span></h2>
+            <p>Complete your payment quickly and securely using your preferred method.</p>
+        </div>
+
+        <div class="payment-container">
+            <!-- LEFT: Payment Steps -->
+            <div class="payment-form">
+
+                <!-- Step 1: Choose Method -->
+                <div class="payment-form-step active" id="step1">
+                    <h3 style="font-size:1.2rem; font-weight:700; color:var(--primary-dark); margin-bottom:1rem;">
+                        <i class="fas fa-credit-card" style="color:var(--primary);"></i> Choose Payment Method
+                    </h3>
+                    <div class="payment-methods-grid">
+                        <div class="payment-method-card selected" onclick="selectMethod(this, 'card')">
+                            <div class="icon"><i class="fas fa-credit-card"></i></div>
+                            <h4>Credit / Debit Card</h4>
+                            <p>Visa, Mastercard, Amex</p>
+                            <div class="check"><i class="fas fa-check-circle"></i> Selected</div>
+                        </div>
+                        <div class="payment-method-card" onclick="selectMethod(this, 'paypal')">
+                            <div class="icon"><i class="fab fa-paypal"></i></div>
+                            <h4>PayPal</h4>
+                            <p>Online payment</p>
+                            <div class="check"><i class="fas fa-check-circle"></i> Selected</div>
+                        </div>
+                        <div class="payment-method-card" onclick="selectMethod(this, 'bank')">
+                            <div class="icon"><i class="fas fa-university"></i></div>
+                            <h4>Bank Transfer</h4>
+                            <p>Direct bank transfer</p>
+                            <div class="check"><i class="fas fa-check-circle"></i> Selected</div>
+                        </div>
+                        <div class="payment-method-card" onclick="selectMethod(this, 'cash')">
+                            <div class="icon"><i class="fas fa-money-bill-wave"></i></div>
+                            <h4>Pay at Reception</h4>
+                            <p>Cash or card in person</p>
+                            <div class="check"><i class="fas fa-check-circle"></i> Selected</div>
+                        </div>
+                        <div class="payment-method-card" onclick="selectMethod(this, 'insurance')" style="grid-column: span 2;">
+                            <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                            <h4>Insurance Direct Billing</h4>
+                            <p>We'll bill your insurance provider directly</p>
+                            <div class="check"><i class="fas fa-check-circle"></i> Selected</div>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-pay" onclick="goToStep2()">
+                            <i class="fas fa-arrow-right"></i> Proceed to Payment
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Payment Details -->
+                <div class="payment-form-step" id="step2">
+                    <h3 style="font-size:1.2rem; font-weight:700; color:var(--primary-dark); margin-bottom:1rem;">
+                        <i class="fas fa-credit-card" style="color:var(--primary);"></i> Payment Details
+                    </h3>
+
+                    <!-- Card Payment -->
+                    <div id="cardPayment">
+                        <div class="form-group">
+                            <label><i class="fas fa-credit-card"></i> Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" />
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Expiry Date</label>
+                                <input type="text" placeholder="MM/YY" />
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-lock"></i> CVV</label>
+                                <input type="text" placeholder="123" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Cardholder Name</label>
+                            <input type="text" placeholder="Full name on card" />
+                        </div>
+                    </div>
+
+                    <!-- Insurance Payment -->
+                    <div id="insurancePayment" style="display:none;">
+                        <div class="form-group">
+                            <label><i class="fas fa-building"></i> Insurance Provider</label>
+                            <select>
+                                <option value="">Select your provider</option>
+                                <option value="AXA">AXA Insurance</option>
+                                <option value="Allianz">Allianz Care</option>
+                                <option value="Bupa">Bupa Global</option>
+                                <option value="Cigna">Cigna International</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-id-card"></i> Policy Number</label>
+                            <input type="text" placeholder="Enter your policy number" />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user-md"></i> Member Name</label>
+                            <input type="text" placeholder="Enter member name" />
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button class="btn-back" onclick="goToStep1()"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="btn-pay" onclick="showConfirmation()">
+                            <i class="fas fa-lock"></i> Pay Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Confirmation -->
+                <div class="confirmation" id="confirmation">
+                    <div class="icon-wrapper"><i class="fas fa-check-circle"></i></div>
+                    <h2>Payment Successful!</h2>
+                    <p>Your payment has been processed. You will receive a confirmation email shortly.</p>
+                    <div class="ref-number">#COD-2025-001</div>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <div class="label">Service</div>
+                            <div class="value">Internal Medicine</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="label">Amount</div>
+                            <div class="value" id="confirmAmount">$120</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="label">Method</div>
+                            <div class="value" id="confirmMethod">Card</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="label">Date</div>
+                            <div class="value">Jan 20, 2025</div>
+                        </div>
+                    </div>
+                    <div class="confirmation-actions">
+                        <a href="#" class="btn-home"><i class="fas fa-home"></i> Home</a>
+                        <a href="#" class="btn-invoice"><i class="fas fa-file-invoice"></i> View Invoice</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Summary -->
+            <div class="payment-summary animate-fade-up delay-2">
+                <h3><i class="fas fa-receipt"></i> Invoice Summary</h3>
+                <div class="summary-item">
+                    <span class="label">Service</span>
+                    <span class="value">Internal Medicine</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Doctor</span>
+                    <span class="value">Dr. Ahmed Al-Hassan</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Date</span>
+                    <span class="value">Jan 20, 2025</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Time</span>
+                    <span class="value">10:00 AM</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Patient</span>
+                    <span class="value">John Doe</span>
+                </div>
+                <div class="summary-item" id="insuranceDiscount">
+                    <span class="label">Insurance Discount</span>
+                    <span class="value" style="color:#4CAF50;">-$30</span>
+                </div>
+                <div class="summary-item total">
+                    <span class="label">Total</span>
+                    <span class="value" id="totalAmount">$120</span>
+                </div>
+                <div id="insuranceBadge" style="display:none;">
+                    <span class="insurance-badge"><i class="fas fa-check-circle"></i> Insurance Applied</span>
+                </div>
+            </div>
+        </div></div>
+    </section>
+
+    <!-- ===== 3. CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-box animate-fade-up">
+            <h2>Need Help?</h2>
+            <p>Contact our support team if you have any questions about your payment.</p>
+            <a href="#" class="btn-white"><i class="fas fa-headset"></i> Contact Support</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-container">
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat"></i> Codry
+                </div>
+                <p class="footer-desc">
+                    Precision healthcare with a human touch. Your health is our mission —
+                    we're here to guide you every step of the way.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="emergency-ambulance.html"><i class="fas fa-chevron-right"></i> Emergency</a></li>
+                    <li><a href="payment.html"><i class="fas fa-chevron-right"></i> Payment</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Internal Medicine</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Gynecology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dermatology</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                    <li><a href="medicai-test.html"><i class="fas fa-chevron-right"></i> Lab Tests</a></li>
+                    <li><a href="radiolagy.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                    <li><a href="pharmacy.html"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+                    <li><a href="room.html"><i class="fas fa-chevron-right"></i> Patient Rooms</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter + Contact + Developer -->
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p class="newsletter-text">Subscribe to get the latest health tips and medical updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-group">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@codry.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Main Street, City</span>
+                    </div>
+                </div>
+
+                <!-- Developer Info -->
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-dev">
+                <!-- <div class="dev-divider"></div> -->
+                <div class="dev-info">
+                    <i class="fas fa-code"></i>
+                    <span>Developed by <strong>Yaseen Muhammad Saeed Al-Bakour</strong></span>
+                </div>
+                <div class="dev-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+963982057497">+963 982 057 497</a>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <p><span>&copy;</span> 2025 <span>Codry Medical Center</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div></div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Navigation
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Scroll to Top
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== PAYMENT LOGIC =====
+        let selectedMethod = 'card';
+        let isInsurance = false;
+
+        function selectMethod(el, method) {
+            document.querySelectorAll('.payment-method-card').forEach(c => c.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedMethod = method;
+            isInsurance = (method === 'insurance');
+
+            // Update summary
+            const discount = document.getElementById('insuranceDiscount');
+            const badge = document.getElementById('insuranceBadge');
+            const total = document.getElementById('totalAmount');
+
+            if (isInsurance) {
+                discount.querySelector('.value').textContent = '-$30';
+                total.textContent = '$90';
+                badge.style.display = 'block';
+            } else {
+                discount.querySelector('.value').textContent = '-$0';
+                total.textContent = '$120';
+                badge.style.display = 'none';
+            }
+        }
+
+        function goToStep1() {
+            document.getElementById('step1').classList.add('active');
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('confirmation').classList.remove('show');
+        }
+
+        function goToStep2() {
+            // Update method in summary
+            const methodNames = {
+                card: 'Card',
+                paypal: 'PayPal',
+                bank: 'Bank Transfer',
+                cash: 'Cash at Reception',
+                insurance: 'Insurance'
+            };
+            document.getElementById('confirmMethod').textContent = methodNames[selectedMethod] || 'Card';
+
+            // Show/hide payment fields
+            if (isInsurance) {
+                document.getElementById('cardPayment').style.display = 'none';
+                document.getElementById('insurancePayment').style.display = 'block';
+            } else {
+                document.getElementById('cardPayment').style.display = 'block';
+                document.getElementById('insurancePayment').style.display = 'none';
+            }
+
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            document.getElementById('confirmation').classList.remove('show');
+        }
+
+        function showConfirmation() {
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('confirmation').classList.add('show');
+            document.getElementById('confirmAmount').textContent = isInsurance ? '$90' : '$120';
+        }
+
+        // Newsletter
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            this.reset();
+        });
+
+        // ===== SCROLL ANIMATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    observer.observe(el);
+                });
+        });
+    </script>
+
+</body>
+</html>
